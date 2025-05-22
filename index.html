@@ -1,0 +1,1654 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fitrition - Fitness & Nutrition</title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/auth-modal.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600&display=swap"
+    rel="stylesheet">
+    
+  <!-- EmailJS SDK -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+
+<body id="top">
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <a href="index.html" class="logo">
+        Fitrition<span class="span">.</span>
+      </a>
+
+      <nav class="navbar" data-navbar>
+
+        <button class="nav-toggle-btn" aria-label="close menu" data-nav-toggler>
+          <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+        </button>
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <a href="index.html" class="navbar-link" data-nav-link>Home</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="pages/about.html" class="navbar-link" data-nav-link>About Us</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="pages/courses.html" class="navbar-link" data-nav-link>All Course</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="pages/blog.html" class="navbar-link" data-nav-link>Blog</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="pages/recipes.html" class="navbar-link" data-nav-link>Recipes</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="pages/contact.html" class="navbar-link" data-nav-link>Contact</a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+      <!-- Auth buttons -->
+      <a href="#" class="btn btn-primary" data-auth-action="login">Login</a>
+      <a href="#" class="btn btn-secondary" data-auth-action="logout" style="display: none;">Logout</a>
+      
+      <!-- Profile information when user is logged in -->
+      <div class="user-profile" style="display: none;">
+        <ion-icon name="person-circle-outline" class="profile-icon"></ion-icon>
+        <span data-profile="name"></span>
+      </div>
+
+      <button class="nav-toggle-btn" aria-label="open manu" data-nav-toggler>
+        <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+      </button>
+
+      <div class="overlay" data-nav-toggler data-overlay></div>
+
+    </div>
+  </header>
+
+
+
+
+
+  <main>
+    <article>
+
+      <!-- Hero section with a catchy phrase and a button to start the course -->
+
+      <section class="section hero" aria-label="hero" id="home" data-section
+        style="background-image: url('./assets/images/hero-banner.jpg')">
+        <div class="container">
+          <!-- Hero subtitle about the course with catchy phrase to catch the attention of the user-->
+          <p class="hero-subtitle">Fitness & Nutrition</p>
+          <!-- Hero title about the course with a catchy phrase to catch the attention of the user-->
+          <h1 class="h1 hero-title">Healthy life style isn't just a diet, <br> 
+             it's a lifestyle.</h1>
+          <!-- Hero text about the course with a catchy phrase to catch the attention of the user-->
+          <p class="hero-text">
+            It has survived not only five centuries but also the leap <br>
+            into electronic typesetting, remaining essentially unchanged.
+          </p>
+          <!-- Hero button to start the course-->
+          <a href="pages/courses.html" class="btn btn-secondary">Start Course</a>
+
+          <div class="social-wrapper">
+            <!-- Social title to connect with the user-->
+            <p class="social-title">Connect with us:</p>
+
+            <ul class="social-list">
+
+              <li> <!-- Facebook icon to connect with the user-->
+                <a href="https://www.facebook.com/" class="social-link">
+                  <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+              </li>
+
+              <li> <!-- Skype icon to connect with the user-->
+                <a href="https://www.skype.com/en/" class="social-link">
+                  <ion-icon name="logo-skype"></ion-icon>
+                </a>
+              </li>
+
+              <li> <!-- Twitter -->
+                <a href="https://twitter.com/home" class="social-link">
+                  <ion-icon name="logo-twitter"></ion-icon>
+                </a>
+              </li>
+
+              <li> <!-- Linkedin icon to connect with the user-->
+                <a href="https://www.linkedin.com/feed/" class="social-link">
+                  <ion-icon name="logo-linkedin"></ion-icon>
+                </a>
+              </li>
+
+            </ul>
+
+          </div>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #service section with a grid of cards with a catchy phrase and a button to start the course
+      -->
+
+      <section class="section service" aria-label="service" data-section>
+        <div class="container">
+
+          <ul class="grid-list">
+
+            <li>
+              <div class="service-card">
+
+                <div class="card-icon">
+                  <img src="./assets/images/service-1.svg" width="60" height="60" loading="lazy" alt="Women's Course">
+                </div>
+
+                <h3 class="h3">
+                  <a href="#" class="card-title">Women's Course</a>
+                </h3>
+
+                <p class="card-text">
+                  Focus on the right nutrition and adequate exercise to fuel your body and mind for optimal health and performance.
+                </p>
+
+                <a href="#" class="btn btn-secondary">
+                  <ion-icon name="arrow-forward"></ion-icon>
+                </a>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="service-card active">
+
+                <div class="card-icon">
+                  <img src="./assets/images/service-2.svg" width="60" height="60" loading="lazy" alt="Basic Course">
+                </div>
+
+                <h3 class="h3"> <!--Heading for the card-->
+                  <a href="pages/courses.html" class="card-title">Freshmen Course</a> <!--Link to the courses page-->
+                </h3>
+
+                <p class="card-text">
+                  Personalized nutrition plan and exercise routine to tailor specific
+                  needs and goals of different age groups.
+                </p>
+
+                <a href="pages/courses.html" class="btn btn-secondary"> <!--Link to the courses page-->
+                  <ion-icon name="arrow-forward"></ion-icon>
+                </a>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="service-card">
+
+                <div class="card-icon">
+                  <img src="./assets/images/service-3.svg" width="60" height="60" loading="lazy" alt="Men's Course">
+                </div>
+
+                <h3 class="h3">
+                  <a href="#" class="card-title">Men's Course</a>
+                </h3>
+
+                <p class="card-text">
+                  Lorem Ipsum is simply dummy themes industryes psum has been them industry the loep into type setting.
+                </p>
+
+                <a href="#" class="btn btn-secondary">
+                  <ion-icon name="arrow-forward"></ion-icon>
+                </a>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #ABOUT section with a catchy phrase and a button to meet the instructor
+      -->
+
+      <section class="section about" aria-label="about" id="about" data-section>
+        <div class="container">
+
+          <div class="about-banner img-holder" style="--width: 470; --height: 580;">
+            <img src="./assets/images/diet-concept-with-sport-woman-healthy-food.jpg" width="470" height="580" loading="lazy" alt="Fitness Nutrition Concept"
+              class="img-cover">
+
+            <a href="#" class="btn btn-secondary">Meet Instructor</a>
+          </div>
+
+          <div class="about-content">
+
+            <p class="section-subtitle">25 Years of experience</p>
+
+            <h2 class="h2 section-title">We have expert instructor for helping our students.</h2>
+
+            <p class="section-text">
+              We'll assign you a personal trainer who will help you achieve your goals and guide you along to get the most out of your fitness journey.
+            </p>
+
+            <h3 class="about-h3">100+ Courses</h3>
+
+            <p class="section-text">
+                Various courses are available for you to choose from nutritional-based recipes to different types of fitness.
+            </p>
+
+          </div>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #COURSE
+      -->
+
+      <section class="section course" aria-label="course" id="course" data-section>
+        <div class="container">
+
+          <div class="title-wrapper">
+            <p class="section-subtitle">100+ Courses Available</p>
+
+            <h2 class="h2 section-title">Fitness & Nutrition Courses</h2>
+          </div>
+
+          <ul class="grid-list">
+
+            <li>
+              <div class="course-card">
+
+                <figure class="card-banner img-holder" style="--width: 350; --height: 300;">
+                  <img src="./assets/images/courses-1.jpg" width="350" height="300" loading="lazy"
+                    alt="Children Nutrition and Cooking" class="img-cover">
+                </figure>
+
+                <div class="card-content">
+
+                  <data class="card-price" value="98">RM98</data>
+
+                  <p class="card-author">
+                    <a href="#" class="card-link">
+                      By: <span class="span">Ryan Patterson</span>
+                    </a>
+                  </p>
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Children Nutrition and Cooking</a>
+                  </h3>
+
+                  <ul class="card-meta-list">
+
+                    <li class="card-meta-item">
+                      <time datetime="PT8H20M">18 Hours 20 Minutes</time>
+                    </li>
+
+                    <li class="card-meta-item">
+                      <p class="card-meta-text">28 Lectures</p>
+                    </li>
+
+                  </ul>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="course-card">
+
+                <figure class="card-banner img-holder" style="--width: 350; --height: 300;">
+                  <img src="./assets/images/courses-2.jpg" width="350" height="300" loading="lazy"
+                    alt="Introduction to Food and Health." class="img-cover">
+                </figure>
+
+                <div class="card-content">
+
+                  <data class="card-price" value="72">RM72</data>
+
+                  <p class="card-author">
+                    <a href="#" class="card-link">
+                      By: <span class="span">Arlene Daniels</span>
+                    </a>
+                  </p>
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Introduction to Food and Health.</a>
+                  </h3>
+
+                  <ul class="card-meta-list">
+
+                    <li class="card-meta-item">
+                      <time datetime="PT9H25M">18 Hours 25 Minutes</time>
+                    </li>
+
+                    <li class="card-meta-item">
+                      <p class="card-meta-text">16 Lectures</p>
+                    </li>
+
+                  </ul>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="course-card">
+
+                <figure class="card-banner img-holder" style="--width: 350; --height: 300;">
+                  <img src="./assets/images/courses-3.jpg" width="350" height="300" loading="lazy"
+                    alt="Nutrition and Lifestyle in Pregnancy" class="img-cover">
+                </figure>
+
+                <div class="card-content">
+
+                  <data class="card-price" value="68">RM68</data>
+
+                  <p class="card-author">
+                    <a href="#" class="card-link">
+                      By: <span class="span">Selina Benton</span>
+                    </a>
+                  </p>
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Nutrition and Lifestyle in Pregnancy</a>
+                  </h3>
+
+                  <ul class="card-meta-list">
+
+                    <li class="card-meta-item">
+                      <time datetime="PT3H38M">25 Hours 38 Minutes</time>
+                    </li>
+
+                    <li class="card-meta-item">
+                      <p class="card-meta-text">18 Lectures</p>
+                    </li>
+
+                  </ul>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="course-card">
+
+                <figure class="card-banner img-holder" style="--width: 350; --height: 300;">
+                  <img src="./assets/images/courses-4.jpg" width="350" height="300" loading="lazy"
+                    alt="Expertise on Fitness, Nutrition and Health" class="img-cover">
+                </figure>
+
+                <div class="card-content">
+
+                  <data class="card-price" value="98">RM98</data>
+
+                  <p class="card-author">
+                    <a href="#" class="card-link">
+                      By: <span class="span">Ryan Patterson</span>
+                    </a>
+                  </p>
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Expertise on Fitness, Nutrition and Health</a>
+                  </h3>
+
+                  <ul class="card-meta-list">
+
+                    <li class="card-meta-item">
+                      <time datetime="PT2H16M">42 Hours 16 Minutes</time>
+                    </li>
+
+                    <li class="card-meta-item">
+                      <p class="card-meta-text">14 Lectures</p>
+                    </li>
+
+                  </ul>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="course-card">
+
+                <figure class="card-banner img-holder" style="--width: 350; --height: 300;">
+                  <img src="./assets/images/courses-5.jpg" width="350" height="300" loading="lazy"
+                    alt="Hacking exercise for health new science of fitness" class="img-cover">
+                </figure>
+
+                <div class="card-content">
+
+                  <data class="card-price" value="72">$72</data>
+
+                  <p class="card-author">
+                    <a href="#" class="card-link">
+                      By: <span class="span">Arlene Daniels</span>
+                    </a>
+                  </p>
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Hacking exercise for health new science of fitness</a>
+                  </h3>
+
+                  <ul class="card-meta-list">
+
+                    <li class="card-meta-item">
+                      <time datetime="PT6H12M">06 hr 12 mins</time>
+                    </li>
+
+                    <li class="card-meta-item">
+                      <p class="card-meta-text">35 Lectures</p>
+                    </li>
+
+                  </ul>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="course-card">
+
+                <figure class="card-banner img-holder" style="--width: 350; --height: 300;">
+                  <img src="./assets/images/courses-6.jpg" width="350" height="300" loading="lazy"
+                    alt="Designing Your Personal Weight Loss Plan" class="img-cover">
+                </figure>
+
+                <div class="card-content">
+
+                  <data class="card-price" value="68">RM68</data>
+
+                  <p class="card-author">
+                    <a href="#" class="card-link">
+                      By: <span class="span">Selina Benton</span>
+                    </a>
+                  </p>
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Designing Your Personal Weight Loss Plan</a>
+                  </h3>
+
+                  <ul class="card-meta-list">
+
+                    <li class="card-meta-item">
+                      <time datetime="PT9H34M">35 Hours 34 Minutes</time>
+                    </li>
+
+                    <li class="card-meta-item">
+                      <p class="card-meta-text">28 Lectures</p>
+                    </li>
+
+                  </ul>
+
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #COACHING
+      -->
+
+      <section class="section coaching" aria-label="coaching" id="coaching" data-section>
+        <div class="container">
+
+          <div class="title-wrapper">
+            <p class="section-subtitle">Personalized Coaching</p>
+
+            <h2 class="h2 section-title">Find Your Perfect Fitness & Nutrition Plan</h2>
+          </div>
+
+          <div class="coaching-plans">
+            <!-- Basic Plan -->
+            <div class="coaching-card">
+              <div class="card-header">
+                <h3 class="h3 plan-title">Essential Plan</h3>
+                <data class="plan-price" value="49">RM49<span>/month</span></data>
+                <p class="plan-subtitle">Perfect for beginners</p>
+              </div>
+
+              <div class="card-body">
+                <ul class="plan-features">
+                  <li class="feature-item">
+                    <ion-icon name="checkmark-circle-outline"></ion-icon>
+                    <span>Weekly workout plan</span>
+                  </li>
+                  <li class="feature-item">
+                    <ion-icon name="checkmark-circle-outline"></ion-icon>
+                    <span>Basic nutrition guidelines</span>
+                  </li>
+                  <li class="feature-item">
+                    <ion-icon name="checkmark-circle-outline"></ion-icon>
+                    <span>Access to recipe library</span>
+                  </li>
+                  <li class="feature-item inactive">
+                    <ion-icon name="close-circle-outline"></ion-icon>
+                    <span>1-on-1 coaching sessions</span>
+                  </li>
+                  <li class="feature-item inactive">
+                    <ion-icon name="close-circle-outline"></ion-icon>
+                    <span>Personalized meal plans</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="card-footer">
+                <a href="pages/payment.html" class="btn btn-primary choose-plan" data-plan-name="Essential Plan" data-plan-price="$49" data-plan-desc="Perfect for beginners">Choose Plan</a>
+              </div>
+            </div>
+
+            <!-- Standard Plan -->
+            <div class="coaching-card featured">
+              <div class="card-badge">Popular</div>
+              <div class="card-header">
+                <h3 class="h3 plan-title">Premium Plan</h3>
+                <data class="plan-price" value="99">RM99<span>/month</span></data>
+                <p class="plan-subtitle">For dedicated fitness enthusiasts</p>
+              </div>
+
+              <div class="card-body">
+                <ul class="plan-features">
+                  <li class="feature-item">
+                    <ion-icon name="checkmark-circle-outline"></ion-icon>
+                    <span>Personalized workout program</span>
+                  </li>
+                  <li class="feature-item">
+                    <ion-icon name="checkmark-circle-outline"></ion-icon>
+                    <span>Custom nutrition plan</span>
+                  </li>
+                  <li class="feature-item">
+                    <ion-icon name="checkmark-circle-outline"></ion-icon>
+                    <span>Weekly check-ins</span>
+                  </li>
+                  <li class="feature-item">
+                    <ion-icon name="checkmark-circle-outline"></ion-icon>
+                    <span>2 coaching sessions per month</span>
+                  </li>
+                  <li class="feature-item">
+                    <ion-icon name="checkmark-circle-outline"></ion-icon>
+                    <span>Progress tracking</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="card-footer">
+                <a href="pages/payment.html" class="btn btn-secondary choose-plan" data-plan-name="Premium Plan" data-plan-price="$99" data-plan-desc="For dedicated fitness enthusiasts">Choose Plan</a>
+              </div>
+            </div>
+
+            <!-- Premium Plan with a button to choose the plan -->
+            <div class="coaching-card">
+              <div class="card-header">
+                <h3 class="h3 plan-title">Elite Plan</h3>
+                <data class="plan-price" value="199">RM199<span>/month</span></data>
+                <p class="plan-subtitle">Ultimate transformation package</p>
+              </div>
+
+              <div class="card-body">
+                <ul class="plan-features">
+                  <li class="feature-item">
+                    <ion-icon name="checkmark-circle-outline"></ion-icon>
+                    <span>Daily workout programming</span>
+                  </li>
+                  <li class="feature-item">
+                    <ion-icon name="checkmark-circle-outline"></ion-icon>
+                    <span>Advanced nutrition protocols</span>
+                  </li>
+                  <li class="feature-item">
+                    <ion-icon name="checkmark-circle-outline"></ion-icon>
+                    <span>Weekly 1-on-1 coaching</span>
+                  </li>
+                  <li class="feature-item">
+                    <ion-icon name="checkmark-circle-outline"></ion-icon>
+                    <span>24/7 coach support</span>
+                  </li>
+                  <li class="feature-item">
+                    <ion-icon name="checkmark-circle-outline"></ion-icon>
+                    <span>Priority access to new content</span>
+                  </li>
+                </ul>
+              </div>
+              <!-- Elite Plan with a description of the plan and a button to choose the plan -->
+              <div class="card-footer">
+                <a href="pages/payment.html" class="btn btn-primary choose-plan" data-plan-name="Elite Plan" data-plan-price="$199" data-plan-desc="Ultimate transformation package">Choose Plan</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Coaching features with a grid of cards with a catchy phrase and a button to choose the plan -->
+          <div class="coaching-features">
+            <div class="feature-block">
+              <ion-icon name="person-outline" class="feature-icon"></ion-icon>
+              <h4 class="h4 feature-title">Expert Coaches</h4>
+              <p class="feature-text">Work with certified fitness and nutrition professionals dedicated to your success.</p>
+            </div>
+            <!-- Custom Meal Plans with a description of the plan and a button to choose the plan -->
+            <div class="feature-block">
+              <ion-icon name="nutrition-outline" class="feature-icon"></ion-icon>
+              <h4 class="h4 feature-title">Custom Meal Plans</h4>
+              <p class="feature-text">Get personalized nutrition guidance tailored to your needs and preferences.</p>
+            </div>
+            <!-- Flexible Scheduling with a description of the plan and a button to choose the plan -->
+            <div class="feature-block">
+              <ion-icon name="calendar-outline" class="feature-icon"></ion-icon>
+              <h4 class="h4 feature-title">Flexible Scheduling</h4>
+              <p class="feature-text">Programs designed to fit your busy lifestyle with adjustable workout times.</p>
+            </div>
+            <!-- Progress Tracking with a description of the plan and a button to choose the plan --> 
+            <div class="feature-block">
+              <ion-icon name="trending-up-outline" class="feature-icon"></ion-icon>
+              <h4 class="h4 feature-title">Progress Tracking</h4>
+              <p class="feature-text">Monitor your results with detailed metrics and regular assessments.</p>
+            </div>
+          </div>
+
+          <!-- Coach selection with a grid of cards with a catchy phrase and a button to choose the coach -->
+          <div class="coach-selection">
+            <h3 class="h3 selection-title">Choose Your Coach</h3>
+            <p class="selection-text">Browse our team of expert coaches and find the perfect match for your goals</p>
+            <!-- Coach card with a description of the coach and a button to view the profile -->
+            <div class="coaches-wrapper">
+              <div class="coach-card">
+                <img src="./assets/images/trainer-1.jpg" alt="Coach Sarah" class="coach-img">
+                <h4 class="h4 coach-name">Sarah Johnson</h4>
+                <p class="coach-specialty">Weight Loss Specialist</p>
+                <a href="#" class="btn btn-text">View Profile</a>
+              </div>
+              <!-- Coach card with a description of the coach and a button to view the profile -->
+              <div class="coach-card">
+                <img src="./assets/images/trainer-2.jpg" alt="Coach Mike" class="coach-img">
+                <h4 class="h4 coach-name">Mike Peterson</h4>
+                <p class="coach-specialty">Strength & Conditioning</p>
+                <a href="#" class="btn btn-text">View Profile</a>
+              </div>
+              <!-- Coach card with a description of the coach and a button to view the profile -->
+              <div class="coach-card">
+                <img src="./assets/images/blogger-sporty-asian-woman-using-camera-recording-how-make-avocado-juice-video-her-subscriber.jpg" alt="Coach Lisa" class="coach-img">
+                <h4 class="h4 coach-name">Lisa Chen</h4>
+                <p class="coach-specialty">Nutrition Content Creator & Expert</p>
+                <a href="#" class="btn btn-text">View Profile</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #FITNESS PROGRAMS section with a grid of cards with a catchy phrase and a button to start the course
+      -->
+
+      <section class="section fitness-programs" aria-label="fitness-programs" id="programs" data-section>
+        <div class="container">
+
+          <div class="title-wrapper">
+            <p class="section-subtitle">Customized For Your Lifestyle</p>
+
+            <h2 class="h2 section-title">Fitness & Nutrition Programs</h2>
+          </div>
+
+          <!-- Program filters with a grid of cards with a catchy phrase and a button to start the course -->
+          <div class="program-filters">
+            <button class="filter-btn active" data-filter="all">All Programs</button>
+            <button class="filter-btn" data-filter="beginner">Beginner</button>
+            <button class="filter-btn" data-filter="intermediate">Intermediate</button>
+            <button class="filter-btn" data-filter="advanced">Advanced</button>
+          </div>
+
+          <div class="program-grid">
+            <!-- Weight Loss Program -->
+            <div class="program-card" data-category="beginner intermediate">
+              <div class="program-banner">
+                <img src="./assets/images/program-1.jpg" alt="Weight Loss Program" class="program-img">
+                <span class="program-badge">Popular</span>
+              </div>
+              <!-- Program card with a description of the program and a button to view the program -->
+              <div class="program-content">
+                <h3 class="h3 program-title">Weight Loss Program</h3>
+                <!-- Program meta with a grid of cards with a catchy phrase and a button to view the program -->
+                <div class="program-meta">
+                  <div class="meta-item">
+                    <ion-icon name="time-outline"></ion-icon>
+                    <span>8 Weeks</span> <!-- Duration of the program -->
+                  </div>
+                  <div class="meta-item">
+                    <ion-icon name="barbell-outline"></ion-icon>
+                    <span>3-4 Days/Week</span> <!-- Number of days per week -->
+                  </div>
+                </div>
+                <!-- Workout Schedule with a grid of cards with a catchy phrase and a button to view the program -->
+                <div class="program-details">
+                  <div class="detail-item">
+                    <h4 class="h4 detail-title">Workout Schedule</h4>
+                    <ul class="detail-list">
+                      <li>30 min cardio sessions</li>
+                      <li>Full-body strength circuits</li>
+                      <li>2 rest days per week</li>
+                    </ul>
+                  </div>
+                  <!-- Nutrition Focus with a grid of cards with a catchy phrase and a button to view the program -->
+                  <div class="detail-item">
+                    <h4 class="h4 detail-title">Nutrition Focus</h4>
+                    <ul class="detail-list">
+                      <li>Calorie deficit meal plan</li>
+                      <li>High protein recipes</li>
+                      <li>Weekly meal prep guides</li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <a href="#" class="btn btn-primary program-btn">View Program</a>
+              </div>
+            </div>
+
+            <!-- Muscle Building Program with a button to view the program -->
+            <div class="program-card" data-category="intermediate advanced">
+              <div class="program-banner">
+                <img src="./assets/images/program-2.jpg" alt="Muscle Building Program" class="program-img">
+              </div>
+              
+              <div class="program-content">
+                <h3 class="h3 program-title">Muscle Building Program</h3>
+                <!-- Program meta with a grid of cards with a catchy phrase and a button to view the program -->
+                <div class="program-meta">
+                  <div class="meta-item">
+                    <ion-icon name="time-outline"></ion-icon>
+                    <span>12 Weeks</span>
+                  </div>
+                  <div class="meta-item">
+                    <ion-icon name="barbell-outline"></ion-icon>
+                    <span>5 Days/Week</span>
+                  </div>
+                </div>
+                <!-- Workout Schedule with a grid of cards with a catchy phrase and a button to view the program -->
+                <div class="program-details">
+                  <div class="detail-item">
+                    <h4 class="h4 detail-title">Workout Schedule</h4>
+                    <ul class="detail-list">
+                      <li>Split training routine</li>
+                      <li>Progressive overload focus</li>
+                      <li>Optional cardio sessions</li>
+                    </ul>
+                  </div>
+                  <!-- Nutrition Focus with a grid of cards with a catchy phrase and a button to view the program -->
+                  <div class="detail-item">
+                    <h4 class="h4 detail-title">Nutrition Focus</h4>
+                    <ul class="detail-list">
+                      <li>Calorie surplus meal plans</li>
+                      <li>Protein and carb timing</li>
+                      <li>Supplement recommendations</li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <a href="#" class="btn btn-primary program-btn">View Program</a>
+              </div>
+            </div>
+
+            <!-- Total Fitness Program with a button to view the program -->
+            <div class="program-card" data-category="beginner intermediate advanced">
+              <div class="program-banner">
+                <img src="./assets/images/program-3.jpg" alt="Total Fitness Program" class="program-img">
+              </div>
+              
+              <div class="program-content">
+                <h3 class="h3 program-title">Total Fitness Program</h3>
+                
+                <div class="program-meta">
+                  <div class="meta-item">
+                    <ion-icon name="time-outline"></ion-icon>
+                    <span>10 Weeks</span>
+                  </div>
+                  <div class="meta-item">
+                    <ion-icon name="barbell-outline"></ion-icon>
+                    <span>4 Days/Week</span>
+                  </div>
+                </div>
+                
+                <div class="program-details">
+                  <div class="detail-item">
+                    <h4 class="h4 detail-title">Workout Schedule</h4>
+                    <ul class="detail-list">
+                      <li>Balanced strength & cardio</li>
+                      <li>Functional movements</li>
+                      <li>Flexibility training</li>
+                    </ul>
+                  </div>
+                  
+                  <div class="detail-item">
+                    <h4 class="h4 detail-title">Nutrition Focus</h4>
+                    <ul class="detail-list">
+                      <li>Balanced macronutrients</li>
+                      <li>Whole food emphasis</li>
+                      <li>Hydration planning</li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <a href="#" class="btn btn-primary program-btn">View Program</a>
+              </div>
+            </div>
+
+            <!-- Nutrition Life Program - NEW -->
+            <div class="program-card" data-category="beginner intermediate">
+              <div class="program-banner">
+                <img src="./assets/images/nutrition-life.jpg" alt="Nutrition Life Program" class="program-img">
+                <span class="program-badge">New</span>
+              </div>
+              
+              <div class="program-content">
+                <h3 class="h3 program-title">Nutrition Life Program</h3>
+                
+                <div class="program-meta">
+                  <div class="meta-item">
+                    <ion-icon name="time-outline"></ion-icon>
+                    <span>6 Weeks</span>
+                  </div>
+                  <div class="meta-item">
+                    <ion-icon name="nutrition-outline"></ion-icon>
+                    <span>Lifestyle Change</span>
+                  </div>
+                </div>
+                
+                <div class="program-details">
+                  <div class="detail-item">
+                    <h4 class="h4 detail-title">Program Focus</h4>
+                    <ul class="detail-list">
+                      <li>Sustainable eating habits</li>
+                      <li>Nutrition education</li>
+                      <li>Mindful eating practices</li>
+                    </ul>
+                  </div>
+                  
+                  <div class="detail-item">
+                    <h4 class="h4 detail-title">Nutrition Focus</h4>
+                    <ul class="detail-list">
+                      <li>Whole food meal plans</li>
+                      <li>Anti-inflammatory foods</li>
+                      <li>Metabolic health guidance</li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <a href="#" class="btn btn-primary program-btn">View Program</a>
+              </div>
+            </div>
+            
+            <!-- Senior Fitness Program with a button to view the program -->
+            <div class="program-card" data-category="beginner">
+              <div class="program-banner">
+                <img src="./assets/images/senior-fitness.jpg" alt="Senior Fitness Program" class="program-img">
+              </div>
+              
+              <div class="program-content">
+                <h3 class="h3 program-title">Senior Fitness Program</h3>
+                <!-- Program meta with a grid of cards with a catchy phrase and a button to view the program -->
+                <div class="program-meta">
+                  <div class="meta-item">
+                    <ion-icon name="time-outline"></ion-icon>
+                    <span>Ongoing</span>
+                  </div>
+                  <div class="meta-item">
+                    <ion-icon name="barbell-outline"></ion-icon>
+                    <span>3 Days/Week</span>
+                  </div>
+                </div>
+                <!-- Workout Schedule with a grid of cards with a catchy phrase and a button to view the program -->
+                <div class="program-details">
+                  <div class="detail-item">
+                    <h4 class="h4 detail-title">Workout Schedule</h4>
+                    <ul class="detail-list">
+                      <li>Low-impact exercises</li>
+                      <li>Balance & coordination</li>
+                      <li>Joint-friendly movements</li>
+                    </ul>
+                  </div>
+                  
+                  <div class="detail-item">
+                    <h4 class="h4 detail-title">Nutrition Focus</h4>
+                    <ul class="detail-list">
+                      <li>Anti-inflammatory diet</li>
+                      <li>Calcium & vitamin D rich</li>
+                      <li>Hydration importance</li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <a href="#" class="btn btn-primary program-btn">View Program</a>
+              </div>
+            </div>
+
+            <!-- Sports Performance - NEW -->
+            <div class="program-card" data-category="intermediate advanced">
+              <div class="program-banner">
+                <img src="./assets/images/sports-performance.jpg" alt="Sports Performance Program" class="program-img">
+              </div>
+              
+              <div class="program-content">
+                <h3 class="h3 program-title">Sports Performance</h3>
+                
+                <div class="program-meta">
+                  <div class="meta-item">
+                    <ion-icon name="time-outline"></ion-icon>
+                    <span>12 Weeks</span>
+                  </div>
+                  <div class="meta-item">
+                    <ion-icon name="barbell-outline"></ion-icon>
+                    <span>5-6 Days/Week</span>
+                  </div>
+                </div>
+                
+                <div class="program-details">
+                  <div class="detail-item">
+                    <h4 class="h4 detail-title">Workout Schedule</h4>
+                    <ul class="detail-list">
+                      <li>Sport-specific training</li>
+                      <li>Explosive power development</li>
+                      <li>Agility & reaction time</li>
+                    </ul>
+                  </div>
+                  
+                  <div class="detail-item">
+                    <h4 class="h4 detail-title">Nutrition Focus</h4>
+                    <ul class="detail-list">
+                      <li>Performance nutrition timing</li>
+                      <li>Pre/post workout meals</li>
+                      <li>Competition day fueling</li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <a href="#" class="btn btn-primary program-btn">View Program</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="nutrition-recipes">
+            <h3 class="h3 recipes-title">Sample Nutrition Recipes</h3>
+            
+            <div class="recipes-wrapper">
+              <div class="recipe-card">
+                <img src="./assets/images/recipe-1.jpg" alt="Protein Breakfast Bowl" class="recipe-img">
+                <div class="recipe-content">
+                  <h4 class="h4 recipe-name">Protein Breakfast Bowl</h4>
+                  <div class="recipe-meta">
+                    <span class="recipe-category">Breakfast</span>
+                    <span class="recipe-time">15 mins</span>
+                  </div>
+                  <p class="recipe-desc">High protein breakfast with Greek yogurt, berries, and granola.</p>
+                  <a href="#" class="btn-text">View Recipe</a>
+                </div>
+              </div>
+              
+              <div class="recipe-card">
+                <img src="./assets/images/becca-tapert-RjmGzTg4_mw-unsplash.jpg" alt="Homemade Stock Pot Recipe" class="recipe-img">
+                <div class="recipe-content">
+                  <h4 class="h4 recipe-name">Homemade Stock Pot Recipe</h4>
+                  <div class="recipe-meta">
+                    <span class="recipe-category">Basics</span>
+                    <span class="recipe-time">40 mins</span>
+                  </div>
+                  <p class="recipe-desc">Nutrient-rich homemade stock with fresh vegetables and herbs.</p>
+                  <a href="#" class="btn-text">View Recipe</a>
+                </div>
+              </div>
+              
+              <div class="recipe-card">
+                <img src="./assets/images/recipe-3.jpg" alt="Salmon Dinner Plate" class="recipe-img">
+                <div class="recipe-content">
+                  <h4 class="h4 recipe-name">Salmon Dinner Plate</h4>
+                  <div class="recipe-meta">
+                    <span class="recipe-category">Dinner</span>
+                    <span class="recipe-time">30 mins</span>
+                  </div>
+                  <p class="recipe-desc">Omega-rich salmon with sweet potato and steamed broccoli.</p>
+                  <a href="#" class="btn-text">View Recipe</a>
+                </div>
+              </div>
+              
+              <div class="recipe-card">
+                <img src="./assets/images/recipe-4.jpg" alt="Protein Energy Balls" class="recipe-img">
+                <div class="recipe-content">
+                  <h4 class="h4 recipe-name">Protein Energy Balls</h4>
+                  <div class="recipe-meta">
+                    <span class="recipe-category">Snack</span>
+                    <span class="recipe-time">10 mins</span>
+                  </div>
+                  <p class="recipe-desc">No-bake energy balls with oats, peanut butter and protein powder.</p>
+                  <a href="#" class="btn-text">View Recipe</a>
+                </div>
+              </div>
+            </div>
+            
+            <a href="pages/recipes.html" class="btn btn-secondary recipes-more">Browse All Recipes</a>
+          </div>
+
+          <div class="weekly-schedule">
+            <h3 class="h3 schedule-title">Sample Weekly Schedule</h3>
+            <p class="schedule-desc">Here's how you can fit workouts and nutrition into your busy week</p>
+            
+            <div class="schedule-table">
+              <div class="schedule-day">
+                <h4 class="h4 day-title">Monday</h4>
+                <div class="day-content">
+                  <div class="time-slot">
+                    <span class="time">6:00 AM</span>
+                    <span class="activity">Morning Cardio (30 min)</span>
+                  </div>
+                  <div class="time-slot">
+                    <span class="time">8:00 AM</span>
+                    <span class="activity">Protein Breakfast</span>
+                  </div>
+                  <div class="time-slot">
+                    <span class="time">12:30 PM</span>
+                    <span class="activity">Balanced Lunch</span>
+                  </div>
+                  <div class="time-slot">
+                    <span class="time">6:00 PM</span>
+                    <span class="activity">Strength Training (45 min)</span>
+                  </div>
+                  <div class="time-slot">
+                    <span class="time">7:30 PM</span>
+                    <span class="activity">Post-Workout Dinner</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="schedule-day">
+                <h4 class="h4 day-title">Wednesday</h4>
+                <div class="day-content">
+                  <div class="time-slot">
+                    <span class="time">7:00 AM</span>
+                    <span class="activity">HIIT Workout (20 min)</span>
+                  </div>
+                  <div class="time-slot">
+                    <span class="time">8:30 AM</span>
+                    <span class="activity">Recovery Breakfast</span>
+                  </div>
+                  <div class="time-slot">
+                    <span class="time">1:00 PM</span>
+                    <span class="activity">Protein-Rich Lunch</span>
+                  </div>
+                  <div class="time-slot">
+                    <span class="time">4:00 PM</span>
+                    <span class="activity">Healthy Snack</span>
+                  </div>
+                  <div class="time-slot">
+                    <span class="time">7:00 PM</span>
+                    <span class="activity">Light Dinner</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="schedule-day">
+                <h4 class="h4 day-title">Friday</h4>
+                <div class="day-content">
+                  <div class="time-slot">
+                    <span class="time">6:30 AM</span>
+                    <span class="activity">Full Body Workout (60 min)</span>
+                  </div>
+                  <div class="time-slot">
+                    <span class="time">8:30 AM</span>
+                    <span class="activity">Protein Smoothie</span>
+                  </div>
+                  <div class="time-slot">
+                    <span class="time">12:00 PM</span>
+                    <span class="activity">Complex Carbs Lunch</span>
+                  </div>
+                  <div class="time-slot">
+                    <span class="time">3:30 PM</span>
+                    <span class="activity">Pre-Workout Snack</span>
+                  </div>
+                  <div class="time-slot">
+                    <span class="time">7:30 PM</span>
+                    <span class="activity">Recovery Dinner</span>
+                  </div>
+                </div>
+              </div>
+              <!-- Sunday schedule with a grid of cards with a catchy phrase and a button to view the program -->
+              <div class="schedule-day">
+                <h4 class="h4 day-title">Sunday</h4>
+                <div class="day-content">
+                  <div class="time-slot">
+                    <span class="time">8:00 AM</span>
+                    <span class="activity">Light Yoga/Stretching (30 min)</span>
+                  </div>
+                  <div class="time-slot">
+                    <span class="time">9:30 AM</span>
+                    <span class="activity">Balanced Breakfast</span>
+                  </div>
+                  <div class="time-slot">
+                    <span class="time">11:00 AM</span>
+                    <span class="activity">Weekly Meal Prep (2 hours)</span>
+                  </div>
+                  <div class="time-slot">
+                    <span class="time">2:00 PM</span>
+                    <span class="activity">Rest & Recovery</span>
+                  </div>
+                  <div class="time-slot">
+                    <span class="time">6:30 PM</span>
+                    <span class="activity">Light Dinner</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="schedule-note">
+              <ion-icon name="information-circle-outline"></ion-icon>
+              <p>Schedules can be customized based on your personal preferences and time availability.</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #BLOG
+      -->
+
+      <section class="section blog" aria-label="blog" id="blog" data-section>
+        <div class="container">
+
+          <div class="title-wrapper">
+            <p class="section-subtitle">Our Blog Post</p>
+
+            <h2 class="h2 section-title">Latest Article of Nutrition</h2>
+          </div>
+
+          <ul class="grid-list">
+
+            <li>
+              <div class="blog-card">
+
+                <div class="wrapper">
+
+                  <time class="publish-date" datetime="2022-02-24">
+                    <span class="span">24</span> Feb
+                  </time>
+
+                  <div>
+
+                    <div class="card-author">
+                      <a href="#" class="card-link">
+                        By: <span class="span">Maddie Rife</span>
+                      </a>
+                    </div>
+
+                    <ul class="card-meta-list">
+                      <li class="card-meta-item">
+                        <p class="item-text">87 Likes</p>
+                      </li>
+
+                      <li class="card-meta-item">
+                        <p class="item-text">58 Share</p>
+                      </li>
+                    </ul>
+
+                  </div>
+
+                </div>
+
+                <h3 class="h3">
+                  <a href="#" class="card-title">It was popularised sheets the release contain</a>
+                </h3>
+
+                <p class="card-text">
+                  Lorem sum same dummy text theme industry psum have been them industry the leaf into type setting.
+                </p>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="blog-card">
+
+                <div class="wrapper">
+
+                  <time class="publish-date" datetime="2022-02-24">
+                    <span class="span">24</span> Feb
+                  </time>
+
+                  <div>
+
+                    <div class="card-author">
+                      <a href="#" class="card-link">
+                        By: <span class="span">Maddie Rife</span>
+                      </a>
+                    </div>
+
+                    <ul class="card-meta-list">
+                      <li class="card-meta-item">
+                        <p class="item-text">87 Likes</p>
+                      </li>
+
+                      <li class="card-meta-item">
+                        <p class="item-text">58 Share</p>
+                      </li>
+                    </ul>
+
+                  </div>
+
+                </div>
+
+                <h3 class="h3">
+                  <a href="#" class="card-title">It was popularised sheets the release contain</a>
+                </h3>
+
+                <p class="card-text">
+                  Lorem sum same dummy text theme industry psum have been them industry the leaf into type setting.
+                </p>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="blog-card">
+
+                <div class="wrapper">
+
+                  <time class="publish-date" datetime="2022-02-24">
+                    <span class="span">24</span> Feb
+                  </time>
+
+                  <div>
+
+                    <div class="card-author">
+                      <a href="#" class="card-link">
+                        By: <span class="span">Maddie Rife</span>
+                      </a>
+                    </div>
+
+                    <ul class="card-meta-list">
+                      <li class="card-meta-item">
+                        <p class="item-text">87 Likes</p>
+                      </li>
+
+                      <li class="card-meta-item">
+                        <p class="item-text">58 Share</p>
+                      </li>
+                    </ul>
+
+                  </div>
+
+                </div>
+
+                <h3 class="h3">
+                  <a href="#" class="card-title">It was popularised sheets the release contain</a>
+                </h3>
+
+                <p class="card-text">
+                  Lorem sum same dummy text theme industry psum have been them industry the leaf into type setting.
+                </p>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #APP
+      -->
+
+      <section class="section app" aria-label="app" data-section>
+        <div class="container">
+
+          <div class="app-card">
+
+            <p class="section-subtitle">Mobile App Available</p>
+
+            <h2 class="h2 section-title">
+              Download our mobile app.<br>
+              and start coaching anytime.
+            </h2>
+
+            <div class="wrapper">
+              <a href="#" class="app-link" aria-label="play store">
+                <img src="./assets/images/play-store.jpg" width="134" height="38" loading="lazy" alt="Play Store"
+                  class="img">
+              </a>
+
+              <a href="#" class="app-link" aria-label="app store">
+                <img src="./assets/images/app-store.jpg" width="132" height="38" loading="lazy" alt="App Store"
+                  class="img">
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+
+
+
+
+  <!-- 
+    - #FOOTER
+  -->
+
+            <footer class="footer">
+
+              <div class="footer-top section" data-section>
+                <div class="container">
+
+                  <div class="footer-list">
+
+                    <p class="footer-list-title">Subscribe Newsletter</p>
+
+                    <p class="footer-list-text">
+                      Lorem Ipsum has been them an industry printer took a galley make book.
+                    </p>
+
+                    <form action="" class="footer-form">
+                      <input type="email" name="email_address" aria-label="email" placeholder="Enter email" required
+                        class="email-field">
+
+                      <button type="submit" class="btn btn-secondary">Subscribe Now</button>
+                    </form>
+
+                  </div>
+
+                  <ul class="footer-list">
+
+                    <li>
+                      <p class="footer-list-title">All Courses</p>
+                    </li>
+
+                    <li>
+                      <a href="#" class="footer-link">Daily Exercise</a>
+                    </li>
+
+                    <li>
+                      <a href="#" class="footer-link">Find Your Balance</a>
+                    </li>
+
+                    <li>
+                      <a href="#" class="footer-link">Personal Program</a>
+                    </li>
+
+                    <li>
+                      <a href="#" class="footer-link">Natural Process</a>
+                    </li>
+
+                    <li>
+                      <a href="#" class="footer-link">Immune System</a>
+                    </li>
+
+                    <li>
+                      <a href="#" class="footer-link">Gives You Energy</a>
+                    </li>
+
+                  </ul>
+
+                  <ul class="footer-list">
+
+                    <li>
+                      <p class="footer-list-title">Help Links</p>
+                    </li>
+
+                    <li>
+                      <a href="#" class="footer-link">Privacy Policy</a>
+                    </li>
+
+                    <li>
+                      <a href="#" class="footer-link">Discussion</a>
+                    </li>
+
+                    <li>
+                      <a href="pages/termsofService.html" class="footer-link">Terms & Conditions</a>
+                    </li>
+
+                    <li>
+                      <a href="#" class="footer-link">Customer Support</a>
+                    </li>
+
+                    <li>
+                      <a href="#" class="footer-link">Course FAQ's</a>
+                    </li>
+
+                    <li>
+                      <a href="#" class="footer-link">Online Classes</a>
+                    </li>
+
+                  </ul>
+
+                  <ul class="footer-list">
+
+                    <li>
+                      <p class="footer-list-title">Opening Hours</p>
+                    </li>
+
+                    <li>
+                      <a href="#" class="footer-link">Mon-Fri: 9 AM – 6 PM</a>
+                    </li>
+
+                    <li>
+                      <a href="#" class="footer-link">Saturday: 9 AM – 4 PM</a>
+                    </li>
+
+                    <li>
+                      <a href="#" class="footer-link">Sunday: Closed</a>
+                    </li>
+
+                    <li>
+                      <p class="footer-list-title address-title">Location</p>
+                    </li>
+
+                    <li>
+                      <address class="address">
+                        176 W street name, New<br>
+                        York, NY 10014
+                      </address>
+                    </li>
+
+                  </ul>
+
+                </div>
+              </div>
+
+              <div class="footer-bottom">
+                <div class="container">
+
+                  <p class="copyright">
+                    copy; 2025 Futras Made With
+                    <ion-icon name="heart" aria-hidden="true"></ion-icon> by
+                    <a href="#" class="copyright-link">JacobJayenPillai</a>
+                  </p>
+
+                  <ul class="footer-bottom-list">
+
+                    <li class="footer-bottom-item">
+                      <a href="pages/termsofService.html" class="footer-bottom-link">Terms of Service</a>
+                    </li>
+
+                    <li class="footer-bottom-item">
+                      <a href="#" class="footer-bottom-link">Privacy Policy</a>
+                    </li>
+
+                    <li class="footer-bottom-item">
+                      <a href="#" class="footer-bottom-link">Sitemap</a>
+                    </li>
+
+                    <li class="footer-bottom-item">
+                      <a href="#" class="footer-bottom-link">Security</a>
+                    </li>
+
+                  </ul>
+
+                </div>
+              </div>
+
+            </footer>
+
+
+
+
+
+            <!-- 
+              - #BACK TO TOP
+            -->
+
+            <a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>
+              <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
+            </a>
+
+
+
+
+
+            <!-- 
+              - custom js link
+            -->
+            <!-- Firebase App SDK -->
+            <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+            <!-- Firebase Auth SDK -->
+            <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+            <!-- Firebase Firestore SDK -->
+            <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+            <!-- Firebase Storage SDK -->
+            <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-storage-compat.js"></script>
+            <!-- Firebase Analytics SDK -->
+            <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics-compat.js"></script>
+            
+            <!-- Our custom Firebase scripts -->
+            <script src="./assets/js/firebase-config.js"></script>
+            <script src="./assets/js/auth-modal.js"></script>
+            <script src="./assets/js/auth.js"></script>
+            <script src="./assets/js/firestore.js"></script>
+            <script src="./assets/js/storage.js"></script>
+            <script src="./assets/js/script.js" defer></script>
+            
+            <!-- EmailJS configuration -->
+            <script>
+              (function() {
+                emailjs.init({
+                  publicKey: "gJ-E18JRSDyKcCUpy", // Updated with the actual public key
+                });
+              })();
+              
+              // Handle newsletter subscription
+              document.addEventListener('DOMContentLoaded', function() {
+                const footerForm = document.querySelector('.footer-form');
+                
+                if (footerForm) {
+                  footerForm.addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    
+                    const emailField = footerForm.querySelector('.email-field');
+                    const email = emailField.value;
+                    
+                    // Send subscription email via EmailJS
+                    emailjs.send(
+                      "service_oq04ybe", // Updated with the actual service ID
+                      "template_73m38z2", // Updated with the actual template ID
+                      {
+                        subscriber_email: email
+                      }
+                    )
+                    .then(() => {
+                      alert('Thank you for subscribing to our newsletter!');
+                      footerForm.reset();
+                      
+                      // Optional: Save to Firestore as well
+                      if (typeof saveNewsletterSubscription === 'function') {
+                        saveNewsletterSubscription({ email: email });
+                      }
+                    })
+                    .catch(error => {
+                      console.error('Error subscribing:', error);
+                      alert('Sorry, there was an error with your subscription. Please try again later.');
+                    });
+                  });
+                }
+              });
+            </script>
+
+            <!-- 
+              - ionicon link
+            -->
+            <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+            <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+          </body>
+
+          </html>
