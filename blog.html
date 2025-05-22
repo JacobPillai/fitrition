@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Fitrition</title>
+
+    <!-- 
+      - favicon
+    -->
+    <link rel="shortcut icon" href="../favicon.svg" type="image/svg+xml">
+
+    <!-- 
+      - custom css link
+    -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/auth-modal.css">
+
+    <!-- 
+      - google font link
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600&display=swap"
+      rel="stylesheet">
+</head>
+<body id="top">
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <a href="../index.html" class="logo">
+        Fitrition<span class="span">.</span>
+      </a>
+
+      <nav class="navbar" data-navbar>
+
+        <button class="nav-toggle-btn" aria-label="close menu" data-nav-toggler>
+          <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+        </button>
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <a href="../index.html" class="navbar-link" data-nav-link>Home</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="about.html" class="navbar-link" data-nav-link>About Us</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="courses.html" class="navbar-link" data-nav-link>All Course</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="blog.html" class="navbar-link" data-nav-link>Blog</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="recipes.html" class="navbar-link" data-nav-link>Recipes</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="contact.html" class="navbar-link" data-nav-link>Contact</a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+      <!-- Auth buttons -->
+      <a href="#" class="btn btn-primary" data-auth-action="login">Login</a>
+      <a href="#" class="btn btn-secondary" data-auth-action="logout" style="display: none;">Logout</a>
+      
+      <!-- Profile information when user is logged in -->
+      <div class="user-profile" style="display: none;">
+        <ion-icon name="person-circle-outline" class="profile-icon"></ion-icon>
+        <span data-profile="name"></span>
+      </div>
+
+      <button class="nav-toggle-btn" aria-label="open manu" data-nav-toggler>
+        <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+      </button>
+
+      <div class="overlay" data-nav-toggler data-overlay></div>
+
+    </div>
+  </header>
+
+  <main>
+    <article>
+      <!-- Page content goes here -->
+      <section class="section" aria-label="blog-header" data-section
+        style="background-image: url('../assets/images/hero-banner.jpg'); background-position: center; background-size: cover; height: 300px;">
+        <div class="container">
+          <div style="text-align: center; padding-top: 120px;">
+            <h1 class="h1 hero-title">Our Blog</h1>
+            <p class="hero-text">Latest articles on fitness & nutrition</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured Blog Post -->
+      <section class="section" aria-label="featured-blog" data-section>
+        <div class="container">
+          <div class="blog-post">
+            <p class="section-subtitle">Featured Article</p>
+            <h2 class="h2 section-title">Transform Your Life with Fitrition: More Than Just Another Fitness App</h2>
+            
+            <div class="post-meta">
+              <div class="post-author">
+                <img src="../assets/images/blogger-sporty-asian-woman-using-camera-recording-how-make-avocado-juice-video-her-subscriber.jpg" alt="Lisa Chen" class="author-img">
+                <div class="author-info">
+                  <span class="author-name">Lisa Chen</span>
+                  <span class="author-title">Nutrition Content Creator & Expert</span>
+                </div>
+              </div>
+              <div class="post-date">Published: June 15, 2023</div>
+            </div>
+            
+            <div class="post-content">
+              <p class="lead-paragraph">
+                In today's crowded wellness space, finding a truly comprehensive solution for your health journey can feel overwhelming. That's why we created Fitrition – a holistic fitness and nutrition platform designed to transform not just your body, but your entire approach to wellness.
+              </p>
+              
+              <h3 class="h3 post-heading">The Fitrition Difference</h3>
+              
+              <p>
+                Fitrition distinguishes itself by bringing together three essential elements that many other fitness solutions miss:
+              </p>
+              
+              <div class="blog-image-container">
+                <img src="../assets/images/Woman_ActiveWear_Yoga.webp" alt="Woman in activewear doing yoga" class="blog-image">
+                <p class="image-caption">Our holistic approach combines nutrition, exercise, and wellness</p>
+              </div>
+              
+              <div class="blog-list">
+                <ol>
+                  <li><strong>Personalized Nutrition Science:</strong> Instead of generic meal plans, our nutrition experts create personalized eating strategies based on your metabolism, preferences, and goals.</li>
+                  <li><strong>Adaptive Fitness Programming:</strong> Workouts that evolve as you do, preventing plateaus and ensuring continuous progress.</li>
+                  <li><strong>Holistic Wellness Integration:</strong> Addressing sleep quality, stress management, and recovery to maximize your results.</li>
+                </ol>
+              </div>
+              
+              <h3 class="h3 post-heading">Our Expert Team</h3>
+              
+              <p>
+                At the heart of Fitrition is our dedicated team of experts, each bringing specialized knowledge to help you achieve your goals:
+              </p>
+              
+              <div class="team-overview">
+                <div class="team-member">
+                  <img src="../assets/images/logan-weaver-lgnwvr-C0duWrscvPk-unsplash.jpg" alt="Mike Johnson" class="team-member-img">
+                  <h4 class="h4 member-name">Mike Johnson</h4>
+                  <p class="member-title">Head Fitness Coach</p>
+                  <p>With 15 years of experience training professional athletes, Mike designs our progressive workout programs to maximize results while minimizing injury risk.</p>
+                </div>
+                
+                <div class="team-member">
+                  <img src="../assets/images/blogger-sporty-asian-woman-using-camera-recording-how-make-avocado-juice-video-her-subscriber.jpg" alt="Lisa Chen" class="team-member-img">
+                  <h4 class="h4 member-name">Lisa Chen</h4>
+                  <p class="member-title">Nutrition Content Creator & Expert</p>
+                  <p>A registered dietitian with a passion for making nutrition science accessible, Lisa develops our meal plans and creates educational content on smart eating habits.</p>
+                </div>
+                
+                <div class="team-member">
+                  <img src="../assets/images/Woman in Black Top and Pink Leggings Lying on Blue Fit Ball.webp" alt="Selina Benton" class="team-member-img">
+                  <h4 class="h4 member-name">Selina Benton</h4>
+                  <p class="member-title">Wellness Specialist</p>
+                  <p>Focusing on the mind-body connection, Selina integrates stress management, sleep optimization, and recovery techniques into our holistic wellness approach.</p>
+                </div>
+              </div>
+              
+              <h3 class="h3 post-heading">Programs Designed for Real Results</h3>
+              
+              <p>
+                Whether you're just starting your fitness journey or looking to break through plateaus, our diverse program offerings have you covered:
+              </p>
+              
+              <div class="blog-image-container">
+                <img src="../assets/images/sushil-ghimire-DC5akQJyH4I-unsplash.jpg" alt="Woman exercising in gym" class="blog-image">
+                <p class="image-caption">Our customized programs are designed for all fitness levels</p>
+              </div>
+              
+              <div class="program-highlights">
+                <div class="program">
+                  <h4 class="h4 program-title">Weight Loss Program</h4>
+                  <p>
+                    Combines 30-minute cardio sessions, full-body strength circuits, and high-protein meal plans for effective, sustainable results.
+                  </p>
+                </div>
+                
+                <div class="program">
+                  <h4 class="h4 program-title">Muscle Building Program</h4>
+                  <p>
+                    Features progressive overload training principles, split routines, and nutrition timing strategies to maximize muscle development.
+                  </p>
+                </div>
+                
+                <div class="program">
+                  <h4 class="h4 program-title">Total Fitness Program</h4>
+                  <p>
+                    Balances strength, cardio, flexibility, and functional movement for comprehensive fitness improvements.
+                  </p>
+                </div>
+              </div>
+              
+              <p>
+                Each program includes detailed workout schedules, nutrition guidelines, and progress tracking tools to keep you on the path to success.
+              </p>
+              
+              <div class="blog-image-container">
+                <img src="../assets/images/becca-tapert-RjmGzTg4_mw-unsplash.jpg" alt="Nutrition Made Simple" class="blog-image">
+                <p class="image-caption">Our nutrition experts help simplify healthy eating</p>
+              </div>
+              
+              <h3 class="h3 post-heading">Nutrition Made Simple</h3>
+              
+              <p>
+                We believe good nutrition shouldn't be complicated. Our recipe collection features options like:
+              </p>
+              
+              <ul class="blog-list">
+                <li><strong>Protein-packed breakfast bowls</strong> to fuel your mornings</li>
+                <li><strong>Nutrient-rich homemade stock</strong> for flavorful, healthy cooking</li>
+                <li><strong>Balanced salmon dinner plates</strong> with perfect macronutrient ratios</li>
+                <li><strong>Convenient protein energy balls</strong> for on-the-go nutrition</li>
+              </ul>
+              
+              <p>
+                Each recipe includes detailed nutritional information, preparation times, and easy-to-follow instructions – making healthy eating accessible for even the busiest schedules.
+              </p>
+              
+              <h3 class="h3 post-heading">Flexible Plans for Every Commitment Level</h3>
+              
+              <p>
+                We understand that everyone's fitness journey is unique. That's why we've designed our pricing structure to accommodate different goals, budgets, and commitment levels:
+              </p>
+              
+              <div class="blog-image-container">
+                <img src="../assets/images/young-couple-meditating-nature_23-2147645719.jpg" alt="Couple exercising together" class="blog-image">
+                <p class="image-caption">Our plans are designed to fit your lifestyle and goals</p>
+              </div>
+              
+              <div class="pricing-table">
+                <div class="pricing-plan">
+                  <h4 class="plan-name">Essential Plan</h4>
+                  <p class="plan-price">RM49<span>/month</span></p>
+                  <p class="plan-description">Perfect for beginners who want to establish healthy habits with guided support.</p>
+                  <ul class="plan-features-list">
+                    <li>Weekly workout plans tailored to your level</li>
+                    <li>Basic nutrition guidelines and meal suggestions</li>
+                    <li>Access to our extensive recipe library</li>
+                    <li>Progress tracking through our mobile app</li>
+                  </ul>
+                </div>
+                
+                <div class="pricing-plan featured">
+                  <div class="plan-badge">Most Popular</div>
+                  <h4 class="plan-name">Premium Plan</h4>
+                  <p class="plan-price">RM99<span>/month</span></p>
+                  <p class="plan-description">For dedicated fitness enthusiasts looking for personalized guidance.</p>
+                  <ul class="plan-features-list">
+                    <li>Customized workout program updated bi-weekly</li>
+                    <li>Personalized nutrition plan with meal timing</li>
+                    <li>Two coaching video sessions per month</li>
+                    <li>Weekly check-ins and program adjustments</li>
+                    <li>Advanced progress tracking and analytics</li>
+                  </ul>
+                </div>
+                
+                <div class="pricing-plan">
+                  <h4 class="plan-name">Elite Plan</h4>
+                  <p class="plan-price">RM199<span>/month</span></p>
+                  <p class="plan-description">The ultimate transformation package for maximum results.</p>
+                  <ul class="plan-features-list">
+                    <li>Daily programming with frequent updates</li>
+                    <li>Advanced nutrition protocols with periodization</li>
+                    <li>Weekly 1-on-1 coaching sessions</li>
+                    <li>24/7 coach support via messaging</li>
+                    <li>Comprehensive body composition analysis</li>
+                    <li>Priority access to new features and content</li>
+                  </ul>
+                </div>
+              </div>
+              
+              <p class="pricing-note">
+                All plans include a 7-day free trial and can be cancelled anytime. For clients seeking long-term commitment, we offer discounted quarterly and annual packages.
+              </p>
+              
+              <h3 class="h3 post-heading">Why Clients Love Fitrition</h3>
+              
+              <div class="testimonials">
+                <blockquote class="testimonial">
+                  <p>"What impressed me most about Fitrition wasn't just the quality of the workouts, but how the nutritional guidance complemented my exercise routine. Lisa's approach to meal planning completely changed my relationship with food."</p>
+                  <cite>— Maria T.</cite>
+                </blockquote>
+                
+                <blockquote class="testimonial">
+                  <p>"After trying countless fitness apps, Fitrition is the first one that actually helped me make sustainable changes. The combination of structured workouts and flexible meal options fits perfectly into my busy schedule."</p>
+                  <cite>— James K.</cite>
+                </blockquote>
+                
+                <blockquote class="testimonial">
+                  <p>"The personalized coaching made all the difference for me. Having Mike review my form and adjust my program based on my progress kept me motivated and injury-free."</p>
+                  <cite>— Sarah D.</cite>
+                </blockquote>
+              </div>
+              
+              <h3 class="h3 post-heading">Start Your Transformation Today</h3>
+              
+              <p>
+                Ready to experience the Fitrition difference? Getting started is simple:
+              </p>
+              
+              <div class="blog-list">
+                <ol>
+                  <li>Choose a plan that fits your lifestyle and goals</li>
+                  <li>Complete a comprehensive initial assessment</li>
+                  <li>Receive your personalized fitness and nutrition program</li>
+                  <li>Download our app to track your progress and access all features</li>
+                  <li>Connect with your coach and our community for ongoing support</li>
+                </ol>
+              </div>
+              
+              <div class="app-showcase">
+                <div class="app-info">
+                  <h4 class="h4 app-title">The Fitrition App</h4>
+                  <p class="app-description">
+                    Track your workouts, log your meals, connect with coaches, and access your personalized plan anytime, anywhere.
+                  </p>
+                  
+                  <ul class="app-features">
+                    <li>Customized workout plans that adapt to your progress</li>
+                    <li>Nutrition tracking with personalized recommendations</li>
+                    <li>Direct messaging with your coach</li>
+                    <li>Progress tracking and achievement badges</li>
+                    <li>Extensive recipe and exercise libraries</li>
+                  </ul>
+                  
+                  <div class="app-download-links">
+                    <a href="#" class="app-download">
+                      <img src="../assets/images/app-store.jpg" alt="Download on App Store" class="download-badge">
+                    </a>
+                    <a href="#" class="app-download">
+                      <img src="../assets/images/play-store.jpg" alt="Get it on Google Play" class="download-badge">
+                    </a>
+                  </div>
+                </div>
+                
+                <div class="app-screens">
+                  <img src="../assets/images/free-photo-of-magsafe-iphone-stand-oakywood.jpeg" alt="Fitrition App on iPhone" class="app-screen">
+                </div>
+              </div>
+              
+              <p>
+                Remember, real transformation isn't about quick fixes or extreme measures – it's about consistent, sustainable changes guided by expert knowledge.
+              </p>
+              
+              <p>
+                With Fitrition, you're not just following a program; you're building a foundation for lifelong health and wellness.
+              </p>
+              
+              <div class="cta-container">
+                <a href="../pages/courses.html" class="btn btn-primary">View Our Programs</a>
+                <a href="../pages/courses.html" class="btn btn-secondary">See Pricing Plans</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Blog List Placeholder -->
+      <section class="section" aria-label="more-articles" data-section>
+        <div class="container">
+          <h3 class="h3 section-title">More Articles Coming Soon</h3>
+          <p class="section-text">
+            We're working on more informative articles about fitness, nutrition, and wellness. Check back soon!
+          </p>
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <!-- 
+    - #FOOTER
+  -->
+  <footer class="footer">
+    <div class="footer-bottom">
+      <div class="container">
+        <p class="copyright">
+          &copy; 2022 Futras Made With
+          <ion-icon name="heart" aria-hidden="true"></ion-icon> by
+          <a href="#" class="copyright-link">codewithsadee</a>
+        </p>
+        <ul class="footer-bottom-list">
+          <li>
+            <a href="termsofService.html" class="footer-bottom-link">Terms of Service</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 
+    - #BACK TO TOP
+  -->
+  <a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>
+    <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
+  </a>
+
+  <!-- 
+    - custom js link
+  -->
+  <!-- Firebase App SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+  <!-- Firebase Auth SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+  <!-- Firebase Firestore SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+  
+  <!-- Our custom Firebase scripts -->
+  <script src="../assets/js/firebase-config.js"></script>
+  <script src="../assets/js/auth-modal.js"></script>
+  <script src="../assets/js/auth.js"></script>
+  <script src="../assets/js/firestore.js"></script>
+  <script src="../assets/js/script.js" defer></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

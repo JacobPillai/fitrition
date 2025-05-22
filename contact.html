@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Fitrition</title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="../favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/auth-modal.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600&display=swap"
+    rel="stylesheet">
+
+  <!-- EmailJS SDK -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <style>
+    /* Contact page specific styles */
+    .contact-section {
+      padding: 80px 0;
+      background-color: var(--cultured);
+    }
+
+    .contact-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    @media (min-width: 992px) {
+      .contact-container {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    /* Common card styling */
+    .contact-card {
+      background-color: var(--white);
+      border-radius: 10px;
+      box-shadow: var(--shadow-1);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px hsla(0, 0%, 0%, 0.1);
+    }
+
+    /* Card header */
+    .card-header {
+      padding: 25px 30px;
+      background-color: var(--blue-green-color-wheel);
+      color: var(--white);
+    }
+
+    .card-header .section-subtitle {
+      color: var(--white);
+      opacity: 0.9;
+    }
+
+    .card-header .section-title {
+      color: var(--white);
+      margin-block: 10px 5px;
+      text-align: left;
+    }
+
+    .card-header .section-text {
+      color: var(--white);
+      opacity: 0.8;
+      font-size: var(--fs-6);
+    }
+
+    /* Form styling */
+    .contact-form {
+      padding: 30px;
+    }
+
+    .form-field {
+      margin-bottom: 25px;
+    }
+
+    .form-field label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: var(--black-chocolate);
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 14px 18px;
+      border: 1px solid var(--light-gray);
+      border-radius: 6px;
+      font-family: var(--ff-montserrat);
+      outline: none;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .form-input:focus {
+      border-color: var(--blue-green-color-wheel);
+      box-shadow: 0 0 0 3px var(--blue-green-color-wheel_10);
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 150px;
+    }
+
+    .form-alert {
+      padding: 12px 15px;
+      margin-bottom: 20px;
+      border-radius: 6px;
+      display: none;
+      font-weight: 500;
+    }
+
+    .form-alert.success {
+      background-color: rgba(40, 167, 69, 0.12);
+      color: #28a745;
+      border: 1px solid rgba(40, 167, 69, 0.2);
+    }
+
+    .form-alert.error {
+      background-color: rgba(220, 53, 69, 0.12);
+      color: #dc3545;
+      border: 1px solid rgba(220, 53, 69, 0.2);
+    }
+
+    .form-submit-button {
+      position: relative;
+      width: 100%;
+    }
+    
+    /* Fix for invisible button text */
+    .form-submit-button .btn-text {
+      color: white;
+      font-weight: 600;
+    }
+
+    .form-submit-button .spinner {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: none;
+    }
+
+    .form-submit-button.loading .btn-text {
+      visibility: hidden;
+    }
+
+    .form-submit-button.loading .spinner {
+      display: block;
+    }
+
+    /* Contact info styling */
+    .contact-info {
+      padding: 30px;
+    }
+
+    .contact-info-list {
+      display: grid;
+      gap: 25px;
+    }
+
+    .contact-info-item {
+      display: flex;
+      align-items: flex-start;
+      transition: transform 0.3s ease;
+    }
+
+    .contact-info-item:hover {
+      transform: translateX(5px);
+    }
+
+    .contact-info-icon {
+      background-color: var(--blue-green-color-wheel_10);
+      color: var(--blue-green-color-wheel);
+      min-width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 18px;
+      font-size: 1.8rem;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .contact-info-item:hover .contact-info-icon {
+      background-color: var(--blue-green-color-wheel);
+      color: var(--white);
+    }
+
+    .contact-info-text h3 {
+      font-size: 1.8rem;
+      margin-bottom: 5px;
+      color: var(--black-chocolate);
+    }
+
+    .contact-info-text p {
+      color: var(--davys-gray);
+      line-height: 1.6;
+    }
+
+    /* Social links */
+    .social-wrapper {
+      margin-top: 40px;
+      padding-top: 30px;
+      border-top: 1px solid var(--light-gray);
+    }
+
+    .social-title {
+      font-weight: 600;
+      color: var(--black-chocolate);
+      margin-bottom: 20px;
+      font-size: var(--fs-5);
+    }
+
+    .social-list {
+      display: flex;
+      gap: 15px;
+    }
+
+    .social-link {
+      background-color: var(--blue-green-color-wheel_10);
+      color: var(--blue-green-color-wheel);
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    }
+
+    .social-link:hover {
+      background-color: var(--blue-green-color-wheel);
+      color: var(--white);
+      transform: translateY(-5px);
+    }
+
+    /* Map section styling */
+    .map-section {
+      padding: 0 0 80px 0;
+    }
+
+    .map-card {
+      background-color: var(--white);
+      border-radius: 10px;
+      box-shadow: var(--shadow-1);
+      overflow: hidden;
+    }
+
+    .map-header {
+      padding: 20px 30px;
+      background-color: var(--blue-green-color-wheel);
+      color: var(--white);
+    }
+
+    .map-title {
+      font-size: var(--fs-4);
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .map-content {
+      width: 100%;
+      height: 400px;
+      background-color: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    /* Page header styling */
+    .page-header {
+      position: relative;
+      background-image: url('../assets/images/hero-banner.jpg');
+      background-position: center;
+      background-size: cover;
+      padding: 120px 0 80px;
+      z-index: 1;
+    }
+
+    .page-header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: hsla(0, 0%, 0%, 0.5);
+      z-index: -1;
+    }
+
+    .page-header .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .page-title {
+      color: var(--white);
+      margin-bottom: 15px;
+      font-size: var(--fs-1);
+    }
+
+    .page-text {
+      color: var(--white);
+      font-size: var(--fs-5);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+
+<body id="top">
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <a href="../index.html" class="logo">
+        Fitrition<span class="span">.</span>
+      </a>
+
+      <nav class="navbar" data-navbar>
+
+        <button class="nav-toggle-btn" aria-label="close menu" data-nav-toggler>
+          <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+        </button>
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <a href="../index.html" class="navbar-link" data-nav-link>Home</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="about.html" class="navbar-link" data-nav-link>About Us</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="courses.html" class="navbar-link" data-nav-link>All Course</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="blog.html" class="navbar-link" data-nav-link>Blog</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="recipes.html" class="navbar-link" data-nav-link>Recipes</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="contact.html" class="navbar-link active" data-nav-link>Contact</a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+      <!-- Auth buttons -->
+      <a href="#" class="btn btn-primary" data-auth-action="login">Login</a>
+      <a href="#" class="btn btn-secondary" data-auth-action="logout" style="display: none;">Logout</a>
+      
+      <!-- Profile information when user is logged in -->
+      <div class="user-profile" style="display: none;">
+        <ion-icon name="person-circle-outline" class="profile-icon"></ion-icon>
+        <span data-profile="name"></span>
+      </div>
+
+      <button class="nav-toggle-btn" aria-label="open manu" data-nav-toggler>
+        <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+      </button>
+
+      <div class="overlay" data-nav-toggler data-overlay></div>
+
+    </div>
+  </header>
+
+  <main>
+    <article>
+
+      <!-- 
+        - #PAGE HEADER
+      -->
+      <section class="page-header" aria-label="page-header">
+        <div class="container">
+          <h1 class="h1 page-title">Contact Us</h1>
+          <p class="page-text">We'd love to hear from you. Whether you have a question about our courses, recipes, or anything else, our team is ready to answer all your questions.</p>
+        </div>
+      </section>
+
+      <!-- 
+        - #CONTACT SECTION
+      -->
+      <section class="section contact-section" aria-label="contact" id="contact" data-section>
+        <div class="container">
+          
+          <div class="contact-container">
+            <!-- Contact Form -->
+            <div class="contact-card">
+              <div class="card-header">
+                <p class="section-subtitle">Get In Touch</p> <!--Subtitle for the contact form-->
+                <h2 class="h2 section-title">Send Us a Message</h2> <!--Title for the contact form-->
+                <p class="section-text">
+                  Fill out the form below and our team will get back to you within 24 hours.
+                </p>
+              </div>
+
+              <div class="contact-form"> <!--Contact form-->
+                <div id="formAlert" class="form-alert"></div> <!--Alert for the contact form-->
+
+                <form action="#" id="contactForm">
+                  <div class="form-field">
+                    <label for="name">Your Name</label> <!--Label for the name field-->
+                    <input type="text" id="name" name="name" class="form-input" placeholder="Enter your full name" required> <!--Input field for the name-->
+                  </div>
+
+                  <div class="form-field">
+                    <label for="email">Email Address</label> <!--Label for the email field-->
+                    <input type="email" id="email" name="email" class="form-input" placeholder="Enter your email address" required> <!--Input field for the email-->
+                  </div>
+
+                  <div class="form-field">
+                    <label for="subject">Subject</label> <!--Label for the subject field-->
+                    <select id="subject" name="subject" class="form-input" required> <!--Select field for the subject-->
+                      <option value="" disabled selected>Select a subject</option> <!--Option for the subject field-->
+                      <option value="general">General Inquiry</option> <!--Option for the subject field-->
+                      <option value="support">Course Support</option> <!--Option for the subject field-->
+                      <option value="feedback">Feedback</option> <!--Option for the subject field-->
+                      <option value="partnership">Partnership</option> <!--Option for the subject field-->
+                    </select>
+                  </div>
+<!-- Send message button in the form field allowing the user to send a message-->
+                  <div class="form-field">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" class="form-input form-textarea" placeholder="Enter your message" required></textarea>
+                  </div>
+
+                  <button type="submit" class="btn btn-primary form-submit-button" style="background-color: var(--blue-green-color-wheel); color: white;">
+                    <span class="btn-text">Send Message</span>
+                    <div class="spinner">
+                      <ion-icon name="refresh-outline" style="animation: spin 1s linear infinite;"></ion-icon>
+                    </div>
+                  </button>
+                </form>
+              </div>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="contact-card">
+              <div class="card-header">
+                <p class="section-subtitle">Contact Information</p>
+                <h2 class="h2 section-title">How To Reach Us</h2>
+                <p class="section-text">
+                  Our friendly team is here to help you with any questions or concerns.
+                </p>
+              </div>
+
+              <div class="contact-info">
+                <div class="contact-info-list">
+                  <div class="contact-info-item">
+                    <div class="contact-info-icon">
+                      <ion-icon name="location-outline"></ion-icon>
+                    </div>
+                    <div class="contact-info-text">
+                      <h3>Our Location</h3> <!--Location for the contact information-->
+                      <p>USJ, Subang Jaya, Selangor</p> <!--Location for the contact information-->
+                    </div>
+                  </div>
+
+                  <div class="contact-info-item">
+                    <div class="contact-info-icon">
+                      <ion-icon name="call-outline"></ion-icon>
+                    </div>
+                    <div class="contact-info-text">
+                      <h3>Phone Number</h3> <!--Phone number for the contact information-->
+                      <p>+60 123456789</p> <!--Phone number for the contact information-->
+                    </div>
+                  </div>
+
+                  <div class="contact-info-item">
+                    <div class="contact-info-icon">
+                      <ion-icon name="mail-outline"></ion-icon>
+                    </div>
+                    <div class="contact-info-text">
+                      <h3>Email Address</h3> <!--Email address for the contact information-->
+                      <p>JacobJayenPillai@gmail.com</p> <!--Email address for the contact information-->  
+                    </div>
+                  </div>
+
+                  <div class="contact-info-item">
+                    <div class="contact-info-icon">
+                      <ion-icon name="time-outline"></ion-icon>
+                    </div>
+                    <div class="contact-info-text">
+                      <h3>Working Hours</h3>
+                      <p>Mon - Fri: 9 AM - 6 PM</p>
+                      <p>Saturday: 9 AM - 4 PM</p>
+                      <p>Sunday: Closed</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="social-wrapper">
+                  <p class="social-title">Connect with us on social media:</p>
+                  <ul class="social-list">
+                    <li>
+                      <a href="https://www.facebook.com/" class="social-link" aria-label="Facebook">
+                        <ion-icon name="logo-facebook"></ion-icon>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://www.instagram.com/" class="social-link" aria-label="Instagram">
+                        <ion-icon name="logo-instagram"></ion-icon>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://twitter.com/" class="social-link" aria-label="Twitter">
+                        <ion-icon name="logo-twitter"></ion-icon>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://www.linkedin.com/" class="social-link" aria-label="LinkedIn">
+                        <ion-icon name="logo-linkedin"></ion-icon>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- 
+        - #MAP SECTION
+      -->
+      <section class="section map-section" aria-label="map" data-section>
+        <div class="container">
+          <div class="map-card">
+            <div class="map-header">
+              <h2 class="map-title">Visit Our Location</h2>
+            </div>
+            <div class="map-content">
+              <!-- Map embedding would go here. For placeholder purposes, just showing a div -->
+              <div>
+                <ion-icon name="map-outline" style="font-size: 64px; color: var(--blue-green-color-wheel);"></ion-icon>
+                <p style="margin-top: 15px; font-size: 18px; color: var(--davys-gray);">Interactive Map Would Load Here</p>
+                <p style="margin-top: 10px; color: var(--davys-gray);">176 W street name, New York, NY 10014</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+
+    <div class="footer-top section" data-section>
+      <div class="container">
+
+        <div class="footer-list">
+
+          <p class="footer-list-title">Subscribe Newsletter</p>
+
+          <p class="footer-list-text">
+            Stay updated with our latest courses, fitness tips, and exclusive offers.
+          </p>
+
+          <form action="" class="footer-form">
+            <input type="email" name="email_address" aria-label="email" placeholder="Enter email" required
+              class="email-field">
+
+            <button type="submit" class="btn btn-secondary">Subscribe Now</button>
+          </form>
+
+        </div>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">All Courses</p>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Daily Exercise</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Find Your Balance</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Personal Program</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Natural Process</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Immune System</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Gives You Energy</a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Help Links</p>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Privacy Policy</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Discussion</a>
+          </li>
+
+          <li>
+            <a href="termsofService.html" class="footer-link">Terms & Conditions</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Customer Support</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Course FAQ's</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Online Classes</a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Opening Hours</p>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Mon-Fri: 9 AM – 6 PM</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Saturday: 9 AM – 4 PM</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Sunday: Closed</a>
+          </li>
+
+          <li>
+            <p class="footer-list-title address-title">Location</p>
+          </li>
+
+          <li>
+            <address class="address">
+              176 W street name, New<br>
+              York, NY 10014
+            </address>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+
+        <p class="copyright">
+          &copy; 2025 Fitrition Made With
+          <ion-icon name="heart" aria-hidden="true"></ion-icon> by
+          <a href="#" class="copyright-link">JacobJayenPillai</a>
+        </p>
+
+        <ul class="footer-bottom-list">
+
+          <li class="footer-bottom-item">
+            <a href="termsofService.html" class="footer-bottom-link">Terms of Service</a>
+          </li>
+
+          <li class="footer-bottom-item">
+            <a href="#" class="footer-bottom-link">Privacy Policy</a>
+          </li>
+
+          <li class="footer-bottom-item">
+            <a href="#" class="footer-bottom-link">Sitemap</a>
+          </li>
+
+          <li class="footer-bottom-item">
+            <a href="#" class="footer-bottom-link">Security</a>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- 
+    - #BACK TO TOP
+  -->
+
+  <a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>
+    <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
+  </a>
+
+  <!-- 
+    - custom js link
+  -->
+  <!-- Firebase App SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+  <!-- Firebase Auth SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+  <!-- Firebase Firestore SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+  <!-- Firebase Storage SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-storage-compat.js"></script>
+  <!-- Firebase Analytics SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics-compat.js"></script>
+  
+  <!-- Our custom Firebase scripts -->
+  <script src="../assets/js/firebase-config.js"></script>
+  <script src="../assets/js/auth-modal.js"></script>
+  <script src="../assets/js/auth.js"></script>
+  <script src="../assets/js/firestore.js"></script>
+  <script src="../assets/js/storage.js"></script>
+  <script src="../assets/js/script.js" defer></script>
+
+  <!-- Form submission handling script -->
+  <script>
+    // Define some CSS keyframes for spinner animation
+    const style = document.createElement('style');
+    style.innerHTML = `
+      @keyframes spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    `;
+    document.head.appendChild(style);
+
+    // Initialize EmailJS
+    (function() {
+      emailjs.init({
+        publicKey: "gJ-E18JRSDyKcCUpy", // Updated with the actual public key
+      });
+    })();
+
+    function handleContactForm() {
+      const form = document.getElementById('contactForm');
+      const formAlert = document.getElementById('formAlert');
+      const submitButton = form.querySelector('.form-submit-button');
+      
+      // Function to show alert message
+      function showAlert(message, type) {
+        formAlert.textContent = message;
+        formAlert.className = 'form-alert';
+        formAlert.classList.add(type);
+        formAlert.style.display = 'block';
+        
+        // Scroll to the alert
+        formAlert.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        
+        // Hide after 6 seconds
+        setTimeout(() => {
+          formAlert.style.display = 'none';
+        }, 6000);
+      }
+      
+      // Function to handle form submission
+      if (form) {
+        form.addEventListener('submit', function(event) {
+          event.preventDefault();
+          
+          // Show loading state
+          submitButton.classList.add('loading');
+          
+          // Get form values
+          const name = document.getElementById('name').value;
+          const email = document.getElementById('email').value;
+          const subject = document.getElementById('subject').value;
+          const message = document.getElementById('message').value;
+          
+          // Create contact data object for Firebase
+          const contactData = {
+            name,
+            email,
+            subject,
+            message
+          };
+
+          // First, send email via EmailJS
+          emailjs.send(
+            "service_oq04ybe", // Updated with the actual service ID
+            "template_73m38z2", // Updated with the actual template ID
+            {
+              from_name: name,
+              from_email: email,
+              subject: subject,
+              message: message
+            }
+          )
+          .then(() => {
+            console.log("Email sent successfully");
+            
+            // Reset loading state
+            submitButton.classList.remove('loading');
+            
+            // Show success message right after email is sent
+            showAlert('Thank you for your message! We will get back to you soon.', 'success');
+            
+            // Reset form
+            form.reset();
+            
+            // Then try to save to Firestore as a backup, but don't affect user experience if it fails
+            if (typeof saveContactSubmission === 'function') {
+              saveContactSubmission(contactData).catch(err => {
+                console.error('Note: Firebase backup failed, but email was sent:', err);
+                // No user-visible error here since email was already sent successfully
+              });
+            }
+          })
+          .catch(error => {
+            // Reset loading state
+            submitButton.classList.remove('loading');
+            
+            // Show error message only if EmailJS send fails
+            console.error('Error sending email:', error);
+            showAlert('Sorry, there was an error submitting your message. Please try again later.', 'error');
+          });
+        });
+      }
+    }
+    
+    // Handle newsletter subscription form
+    function handleNewsletterForm() {
+      const form = document.querySelector('.footer-form');
+      
+      if (form) {
+        form.addEventListener('submit', function(event) {
+          event.preventDefault();
+          
+          const emailField = form.querySelector('.email-field');
+          const email = emailField.value;
+          
+          // Send subscription email via EmailJS
+          emailjs.send(
+            "service_oq04ybe", // Updated with the actual service ID
+            "template_73m38z2", // Using the same template ID for newsletter (can create separate one later)
+            {
+              subscriber_email: email
+            }
+          )
+          .then(() => {
+            alert('Thank you for subscribing to our newsletter!');
+            form.reset();
+          })
+          .catch(error => {
+            console.error('Error subscribing:', error);
+            alert('Sorry, there was an error with your subscription. Please try again later.');
+          });
+        });
+      }
+    }
+    
+    // Run when DOM is fully loaded
+    document.addEventListener('DOMContentLoaded', () => {
+      handleContactForm();
+      handleNewsletterForm();
+    });
+  </script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipes - Fitrition</title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="../favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/auth-modal.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600&display=swap"
+    rel="stylesheet">
+</head>
+
+<body id="top">
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <a href="../index.html" class="logo">
+        Fitrition<span class="span">.</span>
+      </a>
+
+      <nav class="navbar" data-navbar>
+
+        <button class="nav-toggle-btn" aria-label="close menu" data-nav-toggler>
+          <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+        </button>
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <a href="../index.html" class="navbar-link" data-nav-link>Home</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="about.html" class="navbar-link" data-nav-link>About Us</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="courses.html" class="navbar-link" data-nav-link>All Course</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="blog.html" class="navbar-link" data-nav-link>Blog</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="recipes.html" class="navbar-link active" data-nav-link>Recipes</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="contact.html" class="navbar-link" data-nav-link>Contact</a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+      <!-- Auth buttons -->
+      <a href="#" class="btn btn-primary" data-auth-action="login">Login</a>
+      <a href="#" class="btn btn-secondary" data-auth-action="logout" style="display: none;">Logout</a>
+      
+      <!-- Profile information when user is logged in -->
+      <div class="user-profile" style="display: none;">
+        <ion-icon name="person-circle-outline" class="profile-icon"></ion-icon>
+        <span data-profile="name"></span>
+      </div>
+
+      <button class="nav-toggle-btn" aria-label="open manu" data-nav-toggler>
+        <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+      </button>
+
+      <div class="overlay" data-nav-toggler data-overlay></div>
+
+    </div>
+  </header>
+
+  <main>
+    <article>
+
+      <!-- 
+        - #HERO
+      -->
+
+      <section class="section hero" aria-label="hero" id="home" data-section
+        style="background-image: url('../assets/images/hero-banner.jpg')">
+        <div class="container">
+
+          <h1 class="h1 hero-title">Healthy & Delicious Recipes</h1>
+
+          <p class="hero-text">
+            Discover nutritious recipes tailored to your fitness and wellness goals
+          </p>
+
+        </div>
+      </section>
+
+      <!-- 
+        - #RECIPE CATEGORIES
+      -->
+
+      <section class="section recipe-categories" aria-label="recipe-categories" data-section>
+        <div class="container">
+
+          <div class="title-wrapper">
+            <p class="section-subtitle">Browse Recipes By</p>
+            <h2 class="h2 section-title">Recipe Categories</h2>
+          </div>
+
+          <div class="category-tabs">
+            <button class="category-tab active" data-category="meal-time">Meal Time</button>
+            <button class="category-tab" data-category="purpose">Purpose</button>
+            <button class="category-tab" data-category="diet-type">Diet Type</button>
+          </div>
+
+          <div class="category-content active" data-content="meal-time">
+            <div class="category-grid">
+              <a href="#breakfast" class="category-card">
+                <img src="../assets/images/breakfast-meat-spread.jpg" alt="Breakfast Recipes" class="category-img">
+                <h3 class="h3 category-title">Breakfast</h3>
+                <p class="category-text">Start your day right with nutritious breakfast options</p>
+              </a>
+
+              <a href="#lunch" class="category-card">
+                <img src="../assets/images/louis-hansel--9CjvlbUGhY-unsplash.jpg" alt="Lunch Recipes" class="category-img">
+                <h3 class="h3 category-title">Lunch</h3>
+                <p class="category-text">Energizing midday meals to fuel your afternoon</p>
+              </a>
+
+              <a href="#dinner" class="category-card">
+                <img src="../assets/images/sandi-firmansyah-xZY4PlG6fNc-unsplash.jpg" alt="Dinner Recipes" class="category-img">
+                <h3 class="h3 category-title">Dinner</h3>
+                <p class="category-text">Satisfying evening recipes that don't compromise health</p>
+              </a>
+
+              <a href="#snacks" class="category-card">
+                <img src="../assets/images/s-well-mP8HvwFA_dw-unsplash.jpg" alt="Snack Recipes" class="category-img">
+                <h3 class="h3 category-title">Snacks</h3>
+                <p class="category-text">Healthy bites between meals to keep you on track</p>
+              </a>
+            </div>
+          </div>
+
+          <div class="category-content" data-content="purpose">
+            <div class="category-grid">
+              <a href="#weight-loss" class="category-card" style="color: inherit;">
+                <img src="../assets/images/joseph-hsing-WiGpVkLCnb8-unsplash.jpg" alt="Weight Loss Recipes" class="category-img">
+                <h3 class="h3 category-title" style="color: var(--black-chocolate);">Weight Loss</h3>
+                <p class="category-text" style="color: var(--davys-gray);">Low-calorie, nutrient-dense meals for healthy weight management</p>
+              </a>
+
+              <a href="#muscle-building" class="category-card" style="color: inherit;">
+                <img src="../assets/images/muscle-building.jpg" alt="Muscle Building Recipes" class="category-img">
+                <h3 class="h3 category-title" style="color: var(--black-chocolate);">Muscle Building</h3>
+                <p class="category-text" style="color: var(--davys-gray);">Protein-packed recipes to support muscle growth and recovery</p>
+              </a>
+
+              <a href="#energy-boost" class="category-card" style="color: inherit;">
+                <img src="../assets/images/energy-boost.jpg" alt="Energy Boost Recipes" class="category-img">
+                <h3 class="h3 category-title" style="color: var(--black-chocolate);">Energy Boost</h3>
+                <p class="category-text" style="color: var(--davys-gray);">Nutrient-rich foods to enhance energy levels and performance</p>
+              </a>
+
+              <a href="#recovery" class="category-card" style="color: inherit;">
+                <img src="../assets/images/recovery.jpg" alt="Recovery Recipes" class="category-img">
+                <h3 class="h3 category-title" style="color: var(--black-chocolate);">Recovery</h3>
+                <p class="category-text" style="color: var(--davys-gray);">Post-workout meals to optimize recovery and reduce soreness</p>
+              </a>
+            </div>
+          </div>
+
+          <div class="category-content" data-content="diet-type">
+            <div class="category-grid">
+              <a href="#high-protein" class="category-card" style="color: inherit;">
+                <img src="../assets/images/high-protein.jpg" alt="High Protein Recipes" class="category-img">
+                <h3 class="h3 category-title" style="color: var(--black-chocolate);">High Protein</h3>
+                <p class="category-text" style="color: var(--davys-gray);">Meals focused on quality protein sources</p>
+              </a>
+
+              <a href="#low-carb" class="category-card" style="color: inherit;">
+                <img src="../assets/images/low-carb.jpg" alt="Low Carb Recipes" class="category-img">
+                <h3 class="h3 category-title" style="color: var(--black-chocolate);">Low Carb</h3>
+                <p class="category-text" style="color: var(--davys-gray);">Recipes with reduced carbohydrate content</p>
+              </a>
+
+              <a href="#vegetarian" class="category-card" style="color: inherit;">
+                <img src="../assets/images/vegetarian.jpg" alt="Vegetarian Recipes" class="category-img">
+                <h3 class="h3 category-title" style="color: var(--black-chocolate);">Vegetarian</h3>
+                <p class="category-text" style="color: var(--davys-gray);">Plant-based meals packed with nutrients</p>
+              </a>
+
+              <a href="#gluten-free" class="category-card" style="color: inherit;">
+                <img src="../assets/images/gluten-free.jpg" alt="Gluten-Free Recipes" class="category-img">
+                <h3 class="h3 category-title" style="color: var(--black-chocolate);">Gluten-Free</h3>
+                <p class="category-text" style="color: var(--davys-gray);">Delicious recipes without gluten</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 
+        - #FEATURED RECIPES
+      -->
+
+      <section class="section featured-recipes" aria-label="featured-recipes" data-section>
+        <div class="container">
+
+          <div class="title-wrapper">
+            <p class="section-subtitle">Staff Picks</p>
+            <h2 class="h2 section-title">Featured Recipes</h2>
+          </div>
+
+          <div class="recipes-grid">
+            <div class="recipe-card">
+              <div class="recipe-banner">
+                <img src="../assets/images/High-Protein-Baked-Egg-Scramble-Bowls-Recipe-3.jpg" alt="High Protein Baked Egg Bowl" class="recipe-img">
+                <span class="recipe-badge">Breakfast</span>
+              </div>
+              
+              <div class="recipe-content">
+                <h3 class="h3 recipe-title">Protein Breakfast Bowl</h3>
+                
+                <div class="recipe-meta">
+                  <span class="meta-item">
+                    <ion-icon name="time-outline"></ion-icon>
+                    15 mins
+                  </span>
+                  <span class="meta-item">
+                    <ion-icon name="flash-outline"></ion-icon>
+                    High Protein
+                  </span>
+                </div>
+                <!-- Recipe Description -->
+                <p class="recipe-desc">
+                  Get your day started off right with these hearty, 
+                  High Protein Baked Egg Bowls for breakfast! Simply blend cottage cheese, egg whites, 
+                  and eggs to create an ultra creamy, protein-packed egg bake—each bowl delivers 33 grams of protein. 
+                  Afterwards, customize with your favorite extras like breakfast sausage, bacon, peppers, onions, beans, or cheese. 
+                  All in All, these bowls are perfect for meal prep and bake best in an oven-safe glass container, 
+                  making your mornings both nutritious and convenient.
+                </p>
+                
+                <a href="recipe-detail.html" class="btn btn-text">View Recipe</a>
+              </div>
+            </div>
+
+            <div class="recipe-card">
+              <div class="recipe-banner">
+                <img src="../assets/images/becca-tapert-RjmGzTg4_mw-unsplash.jpg" alt="Chicken & Veggie Lunch" class="recipe-img">
+                <span class="recipe-badge">Lunch</span>
+              </div>
+              
+              <div class="recipe-content">
+                <h3 class="h3 recipe-title">Chicken & Veggie Lunch</h3>
+                
+                <div class="recipe-meta">
+                  <span class="meta-item">
+                    <ion-icon name="time-outline"></ion-icon>
+                    25 mins
+                  </span>
+                  <span class="meta-item">
+                    <ion-icon name="flash-outline"></ion-icon>
+                    Balanced
+                  </span>
+                </div>
+                
+                <p class="recipe-desc">
+                  Lean chicken breast with roasted vegetables and quinoa.
+                </p>
+                
+                <a href="recipe-detail.html" class="btn btn-text">View Recipe</a>
+              </div>
+            </div>
+
+            <div class="recipe-card">
+              <div class="recipe-banner">
+                <img src="../assets/images/caroline-attwood-bpPTlXWTOvg-unsplash.jpg" alt="Salmon Dinner Plate" class="recipe-img">
+                <span class="recipe-badge">Dinner</span>
+              </div>
+              
+              <div class="recipe-content">
+                <h3 class="h3 recipe-title">Salmon Dinner Plate</h3>
+                
+                <div class="recipe-meta">
+                  <span class="meta-item">
+                    <ion-icon name="time-outline"></ion-icon>
+                    30 mins
+                  </span>
+                  <span class="meta-item">
+                    <ion-icon name="flash-outline"></ion-icon>
+                    Omega-3 Rich
+                  </span>
+                </div>
+                
+                <p class="recipe-desc">
+                  Omega-rich salmon with sweet potato and steamed broccoli.
+                </p>
+                
+                <a href="recipe-detail.html" class="btn btn-text">View Recipe</a>
+              </div>
+            </div>
+
+            <div class="recipe-card">
+              <div class="recipe-banner">
+                <img src="../assets/images/recipe-4.jpg" alt="Protein Energy Balls" class="recipe-img">
+                <span class="recipe-badge">Snack</span>
+              </div>
+              
+              <div class="recipe-content">
+                <h3 class="h3 recipe-title">Protein Energy Balls</h3>
+                
+                <div class="recipe-meta">
+                  <span class="meta-item">
+                    <ion-icon name="time-outline"></ion-icon>
+                    10 mins
+                  </span>
+                  <span class="meta-item">
+                    <ion-icon name="flash-outline"></ion-icon>
+                    Energy Boost
+                  </span>
+                </div>
+                
+                <p class="recipe-desc">
+                  No-bake energy balls with oats, peanut butter and protein powder.
+                </p>
+                
+                <a href="recipe-detail.html" class="btn btn-text">View Recipe</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- 
+        - #MEAL PLAN SECTION
+      -->
+
+      <section class="section meal-plans" aria-label="meal-plans" data-section>
+        <div class="container">
+
+          <div class="title-wrapper">
+            <p class="section-subtitle">Meal Planning Made Easy</p>
+            <h2 class="h2 section-title">Weekly Meal Plans</h2>
+          </div>
+
+          <div class="meal-plan-cards">
+            <div class="meal-plan-card">
+              <div class="plan-header">
+                <h3 class="h3 plan-title">Weight Loss Meal Plan</h3>
+                <p class="plan-subtitle">1500-1800 calories per day</p>
+              </div>
+              <div class="plan-content">
+                <p class="plan-desc">A balanced, calorie-controlled meal plan designed to support healthy weight loss while providing all necessary nutrients.</p>
+                <ul class="plan-features">
+                  <li>7 days of planned meals</li>
+                  <li>Grocery shopping list included</li>
+                  <li>High protein, moderate carbs</li>
+                  <li>Includes healthy snacks</li>
+                </ul>
+              </div>
+              <div class="plan-footer">
+                <a href="#" class="btn btn-primary">View Plan</a>
+              </div>
+            </div>
+
+            <div class="meal-plan-card featured">
+              <div class="plan-badge">Popular</div>
+              <div class="plan-header">
+                <h3 class="h3 plan-title">Muscle Building Meal Plan</h3>
+                <p class="plan-subtitle">2500-3000 calories per day</p>
+              </div>
+              <div class="plan-content">
+                <p class="plan-desc">A high-protein meal plan designed to support muscle growth and recovery alongside your strength training program.</p>
+                <ul class="plan-features">
+                  <li>7 days of planned meals</li>
+                  <li>High protein, nutrient-dense foods</li>
+                  <li>Pre and post-workout nutrition</li>
+                  <li>Timing guidelines included</li>
+                </ul>
+              </div>
+              <div class="plan-footer">
+                <a href="#" class="btn btn-secondary">View Plan</a>
+              </div>
+            </div>
+
+            <div class="meal-plan-card">
+              <div class="plan-header">
+                <h3 class="h3 plan-title">Balanced Nutrition Plan</h3>
+                <p class="plan-subtitle">2000-2200 calories per day</p>
+              </div>
+              <div class="plan-content">
+                <p class="plan-desc">A well-rounded meal plan focusing on overall health and wellness with balanced macronutrients and plenty of whole foods.</p>
+                <ul class="plan-features">
+                  <li>7 days of planned meals</li>
+                  <li>Balanced macronutrient ratio</li>
+                  <li>Rich in fruits and vegetables</li>
+                  <li>Includes healthy fats</li>
+                </ul>
+              </div>
+              <div class="plan-footer">
+                <a href="#" class="btn btn-primary">View Plan</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+
+    <div class="footer-top section" data-section>
+      <div class="container">
+
+        <div class="footer-list">
+
+          <p class="footer-list-title">Subscribe Newsletter</p>
+
+          <p class="footer-list-text">
+            Lorem Ipsum has been them an industry printer took a galley make book.
+          </p>
+
+          <form action="" class="footer-form">
+            <input type="email" name="email_address" aria-label="email" placeholder="Enter email" required
+              class="email-field">
+
+            <button type="submit" class="btn btn-secondary">Subscribe Now</button>
+          </form>
+
+        </div>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">All Courses</p>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Daily Exercise</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Find Your Balance</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Personal Program</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Natural Process</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Immune System</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Gives You Energy</a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Help Links</p>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Privacy Policy</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Discussion</a>
+          </li>
+
+          <li>
+            <a href="termsofService.html" class="footer-link">Terms & Conditions</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Customer Support</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Course FAQ's</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Online Classes</a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Opening Hours</p>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Mon-Fri: 9 AM – 6 PM</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Saturday: 9 AM – 4 PM</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Sunday: Closed</a>
+          </li>
+
+          <li>
+            <p class="footer-list-title address-title">Location</p>
+          </li>
+
+          <li>
+            <address class="address">
+              176 W street name, New<br>
+              York, NY 10014
+            </address>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+
+        <p class="copyright">
+          copy; 2025 Futras Made With
+          <ion-icon name="heart" aria-hidden="true"></ion-icon> by
+          <a href="#" class="copyright-link">JacobJayenPillai</a>
+        </p>
+
+        <ul class="footer-bottom-list">
+
+          <li class="footer-bottom-item">
+            <a href="termsofService.html" class="footer-bottom-link">Terms of Service</a>
+          </li>
+
+          <li class="footer-bottom-item">
+            <a href="#" class="footer-bottom-link">Privacy Policy</a>
+          </li>
+
+          <li class="footer-bottom-item">
+            <a href="#" class="footer-bottom-link">Sitemap</a>
+          </li>
+
+          <li class="footer-bottom-item">
+            <a href="#" class="footer-bottom-link">Security</a>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- 
+    - #BACK TO TOP
+  -->
+
+  <a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>
+    <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
+  </a>
+
+  <!-- 
+    - custom js link
+  -->
+  <!-- Firebase App SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+  <!-- Firebase Auth SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+  <!-- Firebase Firestore SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+  <!-- Firebase Storage SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-storage-compat.js"></script>
+  <!-- Firebase Analytics SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics-compat.js"></script>
+  
+  <!-- Our custom Firebase scripts -->
+  <script src="../assets/js/firebase-config.js"></script>
+  <script src="../assets/js/auth-modal.js"></script>
+  <script src="../assets/js/auth.js"></script>
+  <script src="../assets/js/firestore.js"></script>
+  <script src="../assets/js/storage.js"></script>
+  <script src="../assets/js/script.js" defer></script>
+  <script src="../assets/js/recipes.js" defer></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html> 

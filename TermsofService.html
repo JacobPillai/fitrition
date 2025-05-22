@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Service - Fitrition</title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="../favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/auth-modal.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600&display=swap"
+    rel="stylesheet">
+    
+  <style>
+    .terms-section {
+      padding: 60px 0;
+    }
+    
+    .terms-container {
+      max-width: 900px;
+      margin: 0 auto;
+      background-color: var(--white);
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    }
+    
+    .terms-header {
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    
+    .terms-title {
+      margin-bottom: 15px;
+      font-size: 2.5rem;
+      color: var(--eerie-black);
+    }
+    
+    .terms-description {
+      font-size: 1.1rem;
+      color: var(--sonic-silver);
+      line-height: 1.6;
+    }
+    
+    .terms-section-title {
+      margin: 40px 0 15px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--platinum);
+      font-size: 1.5rem;
+      color: var(--orange-soda);
+    }
+    
+    .terms-content {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--sonic-silver);
+      margin-bottom: 15px;
+    }
+    
+    .terms-contact-info {
+      background-color: var(--cultured);
+      padding: 20px;
+      margin: 30px 0;
+      border-radius: 8px;
+      border-left: 4px solid var(--orange-soda);
+    }
+    
+    .terms-contact-info h3 {
+      color: var(--eerie-black);
+      margin-bottom: 10px;
+    }
+    
+    .terms-contact-info a {
+      color: var(--orange-soda);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    
+    .terms-contact-info a:hover {
+      text-decoration: underline;
+    }
+    
+    .last-updated {
+      font-style: italic;
+      text-align: center;
+      margin-top: 40px;
+      color: var(--sonic-silver);
+    }
+  </style>
+</head>
+
+<body id="top">
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <a href="../index.html" class="logo">
+        Fitrition<span class="span">.</span>
+      </a>
+
+      <nav class="navbar" data-navbar>
+
+        <button class="nav-toggle-btn" aria-label="close menu" data-nav-toggler>
+          <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+        </button>
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <a href="../index.html" class="navbar-link" data-nav-link>Home</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="about.html" class="navbar-link" data-nav-link>About Us</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="courses.html" class="navbar-link" data-nav-link>All Course</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="blog.html" class="navbar-link" data-nav-link>Blog</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="recipes.html" class="navbar-link" data-nav-link>Recipes</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="contact.html" class="navbar-link" data-nav-link>Contact</a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+      <!-- Auth buttons -->
+      <a href="#" class="btn btn-primary" data-auth-action="login">Login</a>
+      <a href="#" class="btn btn-secondary" data-auth-action="logout" style="display: none;">Logout</a>
+      
+      <!-- Profile information when user is logged in -->
+      <div class="user-profile" style="display: none;">
+        <ion-icon name="person-circle-outline" class="profile-icon"></ion-icon>
+        <span data-profile="name"></span>
+      </div>
+
+      <button class="nav-toggle-btn" aria-label="open manu" data-nav-toggler>
+        <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+      </button>
+
+      <div class="overlay" data-nav-toggler data-overlay></div>
+
+    </div>
+  </header>
+
+  <main>
+    <article>
+      <!-- 
+        - #TERMS HEADER
+      -->
+      <section class="section" aria-label="terms-header" data-section
+        style="background-image: url('../assets/images/hero-banner.jpg'); background-position: center; background-size: cover; height: 300px;">
+        <div class="container">
+          <div style="text-align: center; padding-top: 120px;">
+            <h1 class="h1 hero-title">Terms of Service</h1>
+            <p class="hero-text">Please read these terms carefully before using our services</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 
+        - #TERMS CONTENT
+      -->
+      <section class="terms-section" aria-label="terms-of-service">
+        <div class="container terms-container">
+          <div class="terms-header">
+            <h2 class="terms-title">Fitrition Terms of Service</h2>
+            <p class="terms-description">
+              Welcome to Fitrition. These Terms of Service outline the rules and regulations for the use of our platform. 
+              By accessing or using our website and services, you agree to comply with these terms and conditions.
+            </p>
+          </div>
+
+          <h3 class="terms-section-title">1. Acceptance of Terms</h3>
+          <p class="terms-content">
+            By using our platform, you agree to be bound by these terms and conditions. If you do not agree to all of the terms and conditions, please do not use our services.
+          </p>
+
+          <h3 class="terms-section-title">2. Use of the Platform</h3>
+          <p class="terms-content">
+            You must be at least 18 years old to use our services. By using our platform, you represent and warrant that you are at least 18 years of age. Our services are designed to provide fitness and nutrition guidance, but should not replace professional medical advice.
+          </p>
+
+          <h3 class="terms-section-title">3. User Responsibilities</h3>
+          <p class="terms-content">
+            You are responsible for maintaining the security of your account information and password. You must notify us immediately if you suspect any unauthorized use of your account. You also agree to provide accurate information when creating an account and using our services.
+          </p>
+
+          <h3 class="terms-section-title">4. Payment Terms</h3>
+          <p class="terms-content">
+            Payment for subscription plans can be made using credit/debit cards and other payment methods specified on our platform. Subscriptions will automatically renew unless canceled prior to the renewal date. Prices are subject to change with notice provided to users.
+          </p>
+
+          <h3 class="terms-section-title">5. Refund Policy</h3>
+          <p class="terms-content">
+            We offer a 7-day free trial for new users. After the trial period, your subscription will be charged according to the plan you selected. We do not offer refunds for subscription services, but you can cancel your subscription at any time to prevent future billing.
+          </p>
+
+          <h3 class="terms-section-title">6. Privacy Policy</h3>
+          <p class="terms-content">
+            Our Privacy Policy explains how we collect, use, and protect your personal information when you use our platform. By using our services, you agree to our Privacy Policy, which is incorporated into these Terms of Service.
+          </p>
+
+          <h3 class="terms-section-title">7. Changes to Terms of Service</h3>
+          <p class="terms-content">
+            We reserve the right to update or modify these terms and conditions at any time without prior notice. We will notify you of significant changes through the platform or other communication channels. Continued use of our services after such modifications constitutes acceptance of the updated terms.
+          </p>
+
+          <h3 class="terms-section-title">8. Governing Law</h3>
+          <p class="terms-content">
+            These terms and conditions are governed by the laws of the jurisdiction in which our services are provided. Any disputes will be subject to the exclusive jurisdiction of the courts of that jurisdiction.
+          </p>
+
+          <div class="terms-contact-info">
+            <h3>Contact Us</h3>
+            <p>If you have any questions about these terms and conditions, please contact us at:</p>
+            <p>Email: <a href="mailto:support@fitrition.com">support@fitrition.com</a></p>
+            <p>Phone: +1 (555) 123-4567</p>
+          </div>
+
+          <p class="last-updated">Last Updated: June 15, 2023</p>
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+
+    <div class="footer-top section" data-section>
+      <div class="container">
+
+        <div class="footer-list">
+
+          <p class="footer-list-title">Subscribe Newsletter</p>
+
+          <p class="footer-list-text">
+            Stay updated with our latest courses, fitness tips, and exclusive offers.
+          </p>
+
+          <form action="" class="footer-form">
+            <input type="email" name="email_address" aria-label="email" placeholder="Enter email" required
+              class="email-field">
+
+            <button type="submit" class="btn btn-secondary">Subscribe Now</button>
+          </form>
+
+        </div>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">All Courses</p>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Daily Exercise</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Find Your Balance</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Personal Program</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Natural Process</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Immune System</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Gives You Energy</a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Help Links</p>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Privacy Policy</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Discussion</a>
+          </li>
+
+          <li>
+            <a href="termsofService.html" class="footer-link">Terms & Conditions</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Customer Support</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Course FAQ's</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Online Classes</a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Opening Hours</p>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Mon-Fri: 9 AM – 6 PM</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Saturday: 9 AM – 4 PM</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Sunday: Closed</a>
+          </li>
+
+          <li>
+            <p class="footer-list-title address-title">Location</p>
+          </li>
+
+          <li>
+            <address class="address">
+              176 W street name, New<br>
+              York, NY 10014
+            </address>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+
+        <p class="copyright">
+          &copy; 2025 Fitrition Made With
+          <ion-icon name="heart" aria-hidden="true"></ion-icon> by
+          <a href="#" class="copyright-link">JacobJayenPillai</a>
+        </p>
+
+        <ul class="footer-bottom-list">
+
+          <li class="footer-bottom-item">
+            <a href="termsofService.html" class="footer-bottom-link">Terms of Service</a>
+          </li>
+
+          <li class="footer-bottom-item">
+            <a href="#" class="footer-bottom-link">Privacy Policy</a>
+          </li>
+
+          <li class="footer-bottom-item">
+            <a href="#" class="footer-bottom-link">Sitemap</a>
+          </li>
+
+          <li class="footer-bottom-item">
+            <a href="#" class="footer-bottom-link">Security</a>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- 
+    - #BACK TO TOP
+  -->
+
+  <a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>
+    <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
+  </a>
+
+  <!-- 
+    - custom js link
+  -->
+  <!-- Firebase App SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+  <!-- Firebase Auth SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+  <!-- Firebase Firestore SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+  <!-- Firebase Storage SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-storage-compat.js"></script>
+  <!-- Firebase Analytics SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics-compat.js"></script>
+  
+  <!-- Our custom Firebase scripts -->
+  <script src="../assets/js/firebase-config.js"></script>
+  <script src="../assets/js/auth-modal.js"></script>
+  <script src="../assets/js/auth.js"></script>
+  <script src="../assets/js/firestore.js"></script>
+  <script src="../assets/js/storage.js"></script>
+  <script src="../assets/js/script.js" defer></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

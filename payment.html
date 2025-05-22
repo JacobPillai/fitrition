@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - Fitrition</title>
+
+    <!-- 
+      - favicon
+    -->
+    <link rel="shortcut icon" href="../favicon.svg" type="image/svg+xml">
+
+    <!-- 
+      - custom css link
+    -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/auth-modal.css">
+    <link rel="stylesheet" href="../assets/css/payment.css">
+
+    <!-- 
+      - google font link
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600&display=swap"
+      rel="stylesheet">
+</head>
+<body id="top">
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <a href="../index.html" class="logo">
+        Fitrition<span class="span">.</span>
+      </a>
+
+      <nav class="navbar" data-navbar>
+
+        <button class="nav-toggle-btn" aria-label="close menu" data-nav-toggler>
+          <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+        </button>
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <a href="../index.html" class="navbar-link" data-nav-link>Home</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="about.html" class="navbar-link" data-nav-link>About Us</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="courses.html" class="navbar-link" data-nav-link>All Course</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="blog.html" class="navbar-link" data-nav-link>Blog</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="recipes.html" class="navbar-link" data-nav-link>Recipes</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="contact.html" class="navbar-link" data-nav-link>Contact</a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+      <!-- Auth buttons -->
+      <a href="#" class="btn btn-primary" data-auth-action="login">Login</a>
+      <a href="#" class="btn btn-secondary" data-auth-action="logout" style="display: none;">Logout</a>
+      
+      <!-- Profile information when user is logged in -->
+      <div class="user-profile" style="display: none;">
+        <ion-icon name="person-circle-outline" class="profile-icon"></ion-icon>
+        <span data-profile="name"></span>
+      </div>
+
+      <button class="nav-toggle-btn" aria-label="open manu" data-nav-toggler>
+        <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+      </button>
+
+      <div class="overlay" data-nav-toggler data-overlay></div>
+
+    </div>
+  </header>
+
+  <main>
+    <article>
+      <!-- Page content goes here -->
+      <section class="section" aria-label="payment-header" data-section
+        style="background-image: url('../assets/images/hero-banner.jpg'); background-position: center; background-size: cover; height: 300px;">
+        <div class="container">
+          <div style="text-align: center; padding-top: 120px;">
+            <h1 class="h1 hero-title">Payment</h1>
+            <p class="hero-text">Complete your subscription to start your fitness journey</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Payment section -->
+      <section class="section payment-section" aria-label="payment-form" data-section> <!-- Payment section-->  
+        <div class="container">
+          <div class="payment-wrapper">
+            <div class="payment-order-summary">
+              <h2 class="h2 section-title">Order Summary</h2> <!-- Order summary-->
+              
+              <div class="selected-plan" id="selected-plan"> <!-- Selected plan-->
+                <h3 class="h3 plan-title">Premium Plan</h3> <!-- Plan title-->
+                <data class="plan-price" value="99">RM99 per month</data> <!-- Price of the plan-->
+                <p class="plan-subtitle">For dedicated fitness enthusiasts</p> <!-- Plan description-->
+              </div>
+
+              <div class="order-details">
+                <h4 class="h4">Order Details</h4> <!-- Order details--> 
+                <div class="detail-row">
+                  <span class="detail-label">Subtotal</span> <!-- Subtotal-->
+                  <span class="detail-value">RM99.00</span> <!-- Subtotal value-->
+                </div>
+                <div class="detail-row">
+                  <span class="detail-label">Tax</span> <!-- Tax-->
+                  <span class="detail-value">RM0.00</span> <!-- Tax value-->
+                </div>
+                <div class="detail-row total">
+                  <span class="detail-label">Total</span> <!-- Total-->
+                  <span class="detail-value">RM99.00</span> <!-- Total value-->
+                </div>
+              </div>
+
+              <div class="subscription-info">
+                <ion-icon name="information-circle-outline"></ion-icon>
+                <p>Your subscription will automatically renew monthly. You can cancel anytime from your account settings.</p> <!-- Subscription info-->
+              </div>
+
+              <div class="payment-benefits">
+                <h4 class="h4">What You'll Get</h4> <!-- What are the things you'll get-->         
+                <ul class="benefits-list">
+                  <li>
+                    <ion-icon name="checkmark-circle-outline"></ion-icon>
+                    <span>Personalized workout program</span> <!-- Personalized workout program-->
+                  </li>
+                  <li>
+                    <ion-icon name="checkmark-circle-outline"></ion-icon>
+                    <span>Custom nutrition plan</span> <!-- Custom nutrition plan-->
+                  </li>
+                  <li>
+                    <ion-icon name="checkmark-circle-outline"></ion-icon>
+                    <span>Weekly check-ins</span> <!-- Weekly check-ins-->
+                  </li>
+                  <li>
+                    <ion-icon name="checkmark-circle-outline"></ion-icon>
+                    <span>2 coaching sessions per month</span> <!-- 2 coaching sessions per month-->
+                  </li>
+                  <li>
+                    <ion-icon name="checkmark-circle-outline"></ion-icon>
+                    <span>Progress tracking</span> <!-- Progress tracking-->
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="payment-form">
+              <h2 class="h2 section-title">Payment Details</h2> <!-- Payment details-->
+              
+              <div class="payment-methods">
+                <div class="payment-method active">
+                  <input type="radio" name="paymentMethod" id="creditCard" checked>
+                  <label for="creditCard" class="payment-method-label">
+                    <ion-icon name="card-outline"></ion-icon>
+                    <span>Credit/Debit Card</span> <!-- Credit/Debit Card-->
+                  </label>
+                </div>
+              </div>
+
+              <form class="card-payment-form">
+                <div class="form-group">
+                  <label for="cardholderName">Cardholder's Name</label> <!-- Cardholder's Name-->
+                  <input type="text" id="cardholderName" placeholder="Enter name as shown on card" required> <!-- Input for cardholder's name-->
+                </div>
+
+                <div class="form-group">
+                  <label for="cardNumber">Card Number</label> <!-- Card Number-->
+                  <div class="card-number-input">
+                    <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" required maxlength="19"> <!-- Input for card number-->
+                    <div class="card-icons">
+                      <ion-icon name="card-outline"></ion-icon>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="expiryDate">Expiry Date</label> <!-- Expiry Date-->
+                    <input type="text" id="expiryDate" placeholder="MM/YY" required maxlength="5"> <!-- Input for expiry date-->
+                  </div>
+
+                  <div class="form-group">
+                    <label for="cvvCode">CVV</label> <!-- CVV-->
+                    <input type="password" id="cvvCode" placeholder="123" required maxlength="4"> <!-- Input for CVV-->
+                  </div>
+                </div>
+
+                <div class="form-group save-card">
+                  <input type="checkbox" id="saveCard">
+                  <label for="saveCard">Save this card for future payments</label> <!-- Save this card for future payments-->
+                </div>
+
+                <div class="form-group billing-address">
+                  <h4 class="h4">Billing Address</h4> <!-- Billing Address-->
+
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="country">Country</label> <!-- Country-->
+                      <select id="country" required>
+                        <option value="">Select Country</option> <!-- Select Country-->
+                        <option value="MY" selected>Malaysia</option> <!-- Malaysia-->
+                        <option value="SG">Singapore</option> <!-- Singapore-->
+                        <option value="ID">Indonesia</option> <!-- Indonesia-->
+                        <option value="TH">Thailand</option> <!-- Thailand-->
+                      </select>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="zipCode">Postal Code</label> <!-- Postal Code-->
+                      <input type="text" id="zipCode" placeholder="Postal code" required> <!-- Input for postal code-->
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="address">Address</label> <!-- Address-->
+                    <input type="text" id="address" placeholder="Street address" required> <!-- Input for address-->
+                  </div>
+
+                  <div class="form-group">
+                    <label for="city">City</label> <!-- City-->
+                    <input type="text" id="city" placeholder="City" required> <!-- Input for city-->
+                  </div>
+                </div>
+
+                <div class="form-group submit-section">
+                  <button type="submit" class="btn btn-secondary btn-payment">Complete Payment</button> <!-- Complete Payment-->            
+                  <p class="secure-notice">
+                    <ion-icon name="lock-closed-outline"></ion-icon>
+                    Your payment information is secure. We use encryption methods to protect your personal data. <!-- Secure notice of payment information-->
+                  </p>
+                </div>
+              </form>
+
+              <div class="back-to-plans">
+                <a href="courses.html" class="btn-text">
+                  <ion-icon name="arrow-back-outline"></ion-icon>
+                  Back to plans
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <!-- 
+    - #FOOTER
+  -->
+  <footer class="footer">
+    <div class="footer-top section" data-section>
+      <div class="container">
+
+        <div class="footer-list">
+
+          <p class="footer-list-title">Subscribe Newsletter</p>
+
+          <p class="footer-list-text">
+            Lorem Ipsum has been them an industry printer took a galley make book.
+          </p>
+
+          <form action="" class="footer-form">
+            <input type="email" name="email_address" aria-label="email" placeholder="Enter email" required
+              class="email-field">
+
+            <button type="submit" class="btn btn-secondary">Subscribe Now</button>
+          </form>
+
+        </div>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">All Courses</p>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Daily Exercise</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Find Your Balance</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Personal Program</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Natural Process</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Immune System</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Gives You Energy</a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Help Links</p>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Privacy Policy</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Discussion</a>
+          </li>
+
+          <li>
+            <a href="termsofService.html" class="footer-link">Terms & Conditions</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Customer Support</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Course FAQ's</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Online Classes</a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Opening Hours</p>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Mon-Fri: 9 AM – 6 PM</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Saturday: 9 AM – 4 PM</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Sunday: Closed</a>
+          </li>
+
+          <li>
+            <p class="footer-list-title address-title">Location</p>
+          </li>
+
+          <li>
+            <address class="address">
+             Jalan Usj, Subang Jaya<br>
+             47630 Selangor
+            </address>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+
+        <p class="copyright">
+          &copy; 2025 Fitrition
+          <ion-icon name="heart" aria-hidden="true"></ion-icon> by
+          <a href="#" class="copyright-link">JacobPillai</a>
+        </p>
+
+        <ul class="footer-bottom-list">
+
+          <li class="footer-bottom-item">
+            <a href="termsofService.html" class="footer-bottom-link">Terms of Service</a>
+          </li>
+
+          <li class="footer-bottom-item">
+            <a href="#" class="footer-bottom-link">Privacy Policy</a>
+          </li>
+
+          <li class="footer-bottom-item">
+            <a href="#" class="footer-bottom-link">Sitemap</a>
+          </li>
+
+          <li class="footer-bottom-item">
+            <a href="#" class="footer-bottom-link">Security</a>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- 
+    - #BACK TO TOP
+  -->
+  <a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>
+    <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
+  </a>
+
+  <!-- 
+    - custom js link
+  -->
+  <!-- Firebase App SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+  <!-- Firebase Auth SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+  <!-- Firebase Firestore SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+  
+  <!-- Our custom Firebase scripts -->
+  <script src="../assets/js/firebase-config.js"></script>
+  <script src="../assets/js/auth-modal.js"></script>
+  <script src="../assets/js/auth.js"></script>
+  <script src="../assets/js/firestore.js"></script>
+  <script src="../assets/js/payment.js"></script>
+  <script src="../assets/js/script.js" defer></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

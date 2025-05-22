@@ -1,0 +1,334 @@
+/**
+ * Authentication Modal Styles
+ */
+
+/* Modal Container */
+.auth-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.auth-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Modal Content */
+.auth-modal-content {
+  background-color: #fff;
+  width: 90%;
+  max-width: 450px;
+  border-radius: 15px;
+  padding: 2.5rem;
+  position: relative;
+  transform: translateY(20px);
+  transition: transform 0.3s;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.15);
+}
+
+.auth-modal.active .auth-modal-content {
+  transform: translateY(0);
+}
+
+/* Tabs */
+.auth-tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+}
+
+.auth-tab {
+  padding: 0.5rem 1rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  position: relative;
+  color: #888;
+  transition: color 0.3s;
+}
+
+.auth-tab.active {
+  color: hsl(197, 100%, 50%);
+  font-weight: 500;
+}
+
+.auth-tab.active::after { /*this is the line under the active tab*/
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: hsl(197, 100%, 50%);
+  border-radius: 2px;
+}
+
+/* Form Containers */ /*this is the container for the login and signup forms*/
+.auth-form-container {
+  display: none;
+}
+
+.auth-form-container.active {
+  display: block;
+}
+
+/* Close Button */ /*this is the close button*/
+.auth-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.2s;
+}
+
+.auth-modal-close:hover {
+  color: #000;
+}
+
+/* Modal Title */ /*this is the title of the modal*/
+.auth-modal-title {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+  text-align: center;
+}
+
+/*this is the subtitle of the modal*/
+.auth-subtitle {
+  font-size: 0.95rem;
+  text-align: center;
+  color: #777;
+  margin-bottom: 1.5rem;
+}
+
+/* Form Styles */ /*this is the form styles*/
+.auth-form {
+  margin-bottom: 1.5rem;
+}
+
+/*this is the form group*/
+.auth-form-group {
+  margin-bottom: 1.2rem;
+  position: relative;
+}
+
+/*this is the label of the form*/
+.auth-form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+/*this is the input of the form*/
+.auth-form-group input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/*this is the input of the form when it is focused*/
+.auth-form-group input:focus {
+  outline: none;
+  border-color: hsl(197, 100%, 50%);
+  box-shadow: 0 0 0 2px rgba(0, 153, 255, 0.1);
+}
+
+/*this is the forgot password link*/
+.forgot-password {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 0.85rem;
+  color: hsl(197, 100%, 50%);
+  text-decoration: none;
+}
+
+/*this is the forgot password link when it is hovered*/
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+/*this is the submit button*/
+.auth-submit-btn {
+  width: 100%;
+  padding: 0.9rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+  background-color: hsl(197, 100%, 50%);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+/*this is the submit button when it is hovered*/
+.auth-submit-btn:hover {
+  background-color: hsl(197, 100%, 45%);
+}
+
+/*this is the submit button when it is active*/
+.auth-submit-btn:active {
+  transform: scale(0.98);
+}
+
+/*this is the divider*/
+.auth-divider {
+  display: flex;
+  align-items: center;
+  margin: 1.5rem 0;
+  color: #777;
+}
+
+/*this is the divider before and after*/
+.auth-divider::before,
+.auth-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: #ddd;
+}
+
+/*this is the span of the divider*/
+.auth-divider span {
+  padding: 0 1rem;
+  font-size: 0.9rem;
+}
+
+/*this is the social login*/
+.auth-social-login {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/*this is the social login button*/
+.btn-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+/*this is the social login button when it is hovered*/
+.btn-social:hover {
+  background-color: #f5f5f5;
+}
+
+/*this is the social login button when it is active*/
+.btn-social:active {
+  transform: scale(0.95);
+}
+
+.btn-social ion-icon {
+  font-size: 1.2rem;
+}
+
+/*this is the social icons colors*/
+[data-auth-action="google"] ion-icon {
+  color: #4285F4;
+}
+
+/*this is the facebook social icon color*/
+[data-auth-action="facebook"] ion-icon {
+  color: #3b5998;
+}
+
+/*this is the twitter social icon color*/
+[data-auth-action="twitter"] ion-icon {
+  color: #1DA1F2;
+}
+
+/*this is the switch text*/
+.auth-switch-text {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/*this is the switch*/
+.auth-switch {
+  color: hsl(197, 100%, 50%);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+/*this is the switch when it is hovered*/
+.auth-switch:hover {
+  text-decoration: underline;
+}
+
+/*this is the responsive styles*/
+@media (max-width: 768px) {
+  .auth-modal-content {
+    padding: 2rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-modal-content {
+    padding: 1.8rem 1.2rem;
+  }
+  
+  .auth-modal-title {
+    font-size: 1.3rem;
+  }
+}
+
+/*this is the user profile styles*/
+.user-profile {
+  display: flex;
+  align-items: center;
+  margin-right: 1rem;
+  gap: 0.5rem;
+}
+
+/*this is the user profile name*/
+.user-profile [data-profile="name"] {
+  font-weight: 500;
+  color: hsl(197, 100%, 50%);
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/*this is the user profile name when it is responsive*/
+@media (max-width: 768px) {
+  .user-profile [data-profile="name"] {
+    max-width: 80px;
+  }
+}
+
+/*this is the user profile icon*/
+.user-profile .profile-icon {
+  font-size: 1.5rem;
+  color: hsl(197, 100%, 50%);
+} 
